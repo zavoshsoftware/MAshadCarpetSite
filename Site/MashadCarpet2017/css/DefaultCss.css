@@ -1,0 +1,449 @@
+﻿@font-face {
+  font-family: 'Droid Arabic Naskh';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts//DroidNaskh-Regular.eot);
+  src: url(../fonts//DroidNaskh-Regular.eot?#iefix) format('embedded-opentype'),
+       url(../fonts//DroidNaskh-Regular.woff2) format('woff2'),
+       url(../fonts//DroidNaskh-Regular.woff) format('woff'),
+       url(../fonts//DroidNaskh-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Droid Arabic Naskh';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts//DroidNaskh-Bold.eot);
+  src: url(../fonts//DroidNaskh-Bold.eot?#iefix) format('embedded-opentype'),
+       url(../fonts//DroidNaskh-Bold.woff2) format('woff2'),
+       url(../fonts//DroidNaskh-Bold.woff) format('woff'),
+       url(../fonts//DroidNaskh-Bold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'BRoya';
+    src: url('../fonts/BRoya.eot?#') format('eot'), /* IE6?8 */
+    url('../fonts/BRoya.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/BRoya.ttf') format('truetype'); /* Saf3?5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+  font-family: 'BYekan2';
+  src: url('fonts/BYekan.eot?#') format('eot'),  /* IE6?8 */
+       url('fonts/BYekan.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('fonts/BYekan.ttf') format('truetype');  /* Saf3?5, Chrome4+, FF3.5, Opera 10+ */
+}
+body {
+    font-family: 'Droid Arabic Naskh', serif !important;
+}
+.header-links li a, .header-link li a {
+    font-family: 'Droid Arabic Naskh', serif !important;
+}
+#header-top .header-search-btn
+{
+    font-family: 'Droid Arabic Naskh', serif !important;
+}
+
+.fontBYekan
+{
+     font-family: BYekan2 !important;   
+}
+.menu li
+{
+    text-align:right;
+}
+.menu li a
+{
+   font: 14px 'Droid Arabic Naskh', serif !important;
+   direction:rtl;
+  
+}
+.header2 .dropdown-toggle
+{
+ font-family: 'Droid Arabic Naskh', serif !important;
+}
+.header2 .menu > li
+{
+    float:right!important;
+}
+.left-menu.menu > li:first-child > a
+{
+    padding-left: 20px;
+}
+.left-menu.menu > li > a, .right-menu.menu > li > a
+{
+    padding: 0 15px;
+}
+.right-menu.menu > li:last-child > a
+{
+     padding-right: 20px;
+}
+/*.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9
+{
+      float:right!important;
+}*/
+.carousel-title
+{
+    font-family: 'Droid Arabic Naskh', serif !important;
+     text-align: right;
+}
+.product-price-container.text-left
+{
+    direction:rtl;
+    font-family: 'Droid Arabic Naskh', serif !important;
+}
+.product-name
+{
+    direction:rtl;
+    font-family: 'Droid Arabic Naskh', serif !important;
+}
+.product-view-btn, .product-add-btn
+{
+    direction:rtl;
+    font-family: 'Droid Arabic Naskh', serif !important;
+    float:right;
+}
+.product-price-container.text-right
+{
+    direction:rtl;
+}
+.testimonials-section.home
+{
+background-image:url("../images/back-3.jpg")
+}
+.testimonials-section
+{
+    color:#000;
+}
+.feature-box.feature-box-inline
+{
+    text-align:right;
+     font-family: 'Droid Arabic Naskh', serif !important;
+     direction:rtl;
+}
+/*.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12
+{
+     float:right!important;
+}*/
+.product-action-inner
+{
+    float:left;
+}
+.banner.banner-sm h3
+{
+      font-family: 'Droid Arabic Naskh', serif !important;
+}
+.product-price-container
+{
+     font-family: 'Droid Arabic Naskh', serif !important;
+}
+.feature-box.feature-box-inline h3
+{
+      font-family: 'Droid Arabic Naskh', serif !important;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+{
+    font-family: 'Droid Arabic Naskh', serif !important;
+}
+.cart-dropdown-header
+{
+    font-family: 'Droid Arabic Naskh', serif !important;
+}
+.cart-dropdown .cart-desc
+{
+     font:12px/20px 'Droid Arabic Naskh', serif !important;
+}
+.cart-dropdown .product-content
+{
+    margin-left:0;
+    margin-right:105px;
+}
+.cart-dropdown .action-info-container li
+{
+      font:13px/18px 'Droid Arabic Naskh', serif !important;
+      text-align:right;
+}
+.btn
+{
+     font-family: 'Droid Arabic Naskh', serif !important;
+     font-size:13px;
+}
+.menu .megamenu ul a, .side-menu .megamenu ul a
+{
+    direction:rtl;
+}
+.responsive-menu li a
+{
+    text-align:right;
+}
+#responsive-menu-container .menu-btn-wrapper
+{
+    left:0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+.user-dropdown .dropdown-menu li a
+{
+     font-family: 'Droid Arabic Naskh', serif !important;
+     text-align:right;
+}
+.header1 .user-dropdown .dropdown-menu li ul, .header5 .user-dropdown .dropdown-menu li ul
+{
+    /*left:0;*/
+    right:100%;
+}
+.menu > li
+{
+    float:right;
+}
+#main-nav
+{
+    margin-right:0;
+    margin-left:28px;
+}
+.breadcrumb
+{
+    text-align:right;
+    direction:rtl;
+}
+/*.banner-content h1 > span
+{
+    color:#000;
+}*/
+.btn-custom-7
+{
+    background-color:#fff;
+    color:#2f4497;
+}
+.sidebar h3
+{
+    text-align:right;
+}
+.widget .accordion-title
+{
+    text-align:right;
+}
+#category-widget a
+{
+    text-align:right;
+}
+#category-widget
+{
+     font-family: 'Droid Arabic Naskh', serif !important;
+}
+#category-widget li li a
+{
+    direction:rtl;
+}
+
+.accordion-title
+{
+    font-family: 'Droid Arabic Naskh', serif !important;
+}
+.widget .product-image-container
+{
+    float:right;
+    margin-left:20px;
+}
+.widget .product-content
+{
+    margin-right:120px;
+    margin-left:0;
+    text-align:right;
+    direction:rtl;
+}
+
+.widget .product-name
+{
+     text-align:right;
+
+}
+
+.widget .product-price-container
+{
+    text-align:right;
+}
+.product-action-wrapper .product-add-btn
+{
+    padding:10px;
+}
+.product-price-container
+{
+    direction:rtl;
+    font-family: 'Droid Arabic Naskh', serif !important;
+}
+.product-single-meta .product-name
+{
+    text-align:right;
+}
+.product-single-meta ul li
+{
+    text-align:right;
+    direction:rtl;
+    font-size:16px;
+    padding:5px 0;
+}
+.filter-box
+{
+    text-align:right;
+}
+.product-single-meta .product-action-container .btn
+{
+    margin-left:0;
+    margin-right:20px;
+}
+.filter-label, .share-label
+{
+    text-align:right;
+}
+.product-single-meta ul.social-links
+{
+    direction:rtl;
+}
+
+.contact-box-lg h3
+{
+    text-align:right;
+}
+.contact-box-lg .contact-list li
+{
+    text-align:right;
+    direction:rtl;
+}
+.form-group.lg-margin, .form-group.lg-margin .form-control
+{
+    direction:rtl;
+    text-align:right;
+}
+.form-label {
+      font-family: 'Droid Arabic Naskh', serif !important;
+}
+.article h2, .article h2 a
+{
+    text-align:right;
+    direction:rtl;
+}
+p
+{
+    /*text-align:right;*/
+    direction:rtl;
+    /*text-align:justify;*/
+     font-family: 'Droid Arabic Naskh', serif !important;
+
+}
+.readmore
+{
+       font-family: 'Droid Arabic Naskh', serif !important;
+}
+.article-meta, .article-meta a
+{
+     font-family: 'Droid Arabic Naskh', serif !important;
+}
+.article-meta-list li, .article-meta-list li a
+{
+    font-family: 'Droid Arabic Naskh', serif !important;
+}
+.about-banner.light
+{
+    background-image:url("../images/homesliders/index2/slider1.jpg")
+}
+.accordion-reverse .accordion-title .accordion-btn
+{
+    left:302px;
+}
+.testimonials-section.light
+{
+    background-image:url("../images/Back-3.jpg");
+}
+.blackColor
+{
+    color:#000!important;
+}
+.testimonial .testimonial-owner
+{
+    font-family: 'Droid Arabic Naskh', serif !important;
+}
+
+.funfacts-section.light
+{
+    background-image:url("../images/homesliders/index2/slider1.jpg");
+}
+.directionRTL
+{
+    direction:rtl;
+}
+.table .table-title
+{
+      font-family: 'Droid Arabic Naskh', serif !important;
+}
+.fontDroid
+{
+      font-family: 'Droid Arabic Naskh', serif !important;
+}
+.fontDroid span
+{
+      font-family: 'Droid Arabic Naskh', serif !important;
+}
+.form-control::-moz-placeholder
+{
+      font:13px/16px 'Droid Arabic Naskh', serif !important;
+}
+.marginLeft
+{
+    margin-left:29px;
+}
+.filter-size-box.active
+{
+    cursor:pointer;
+}
+.alert-Error
+{
+    background-color:#E7E2D1;color:#E61446;text-align:center;font-size:18px;direction:rtl;padding:10px;
+}
+.alert-succeed
+{
+    background-color:#E7E2D1;color:#81BA53;text-align:center;font-size:18px;direction:rtl;padding:10px;
+}
+.table .product-price-special
+{
+     font-family: 'Droid Arabic Naskh', serif !important;
+}
+.nav-pills > li
+{
+    float:right;
+}
+.nav > li
+{
+     font:12px/16px 'Droid Arabic Naskh', serif !important;
+}
+.nav > li > a
+{
+    padding:7px 16px;
+}
+.textImage
+{
+    width:490px;
+    height:340px !important
+} 
+.article-media-container
+{
+    background:#FBFAF4 none repeat scroll 0 0;
+}
+.fontBRoya
+{
+     font-family: BRoya !important;
+}
+.contact-list li > span
+{
+    text-decoration:none;
+}
+/*.owl-item
+{
+    background-color:#5c86b0;
+}*/

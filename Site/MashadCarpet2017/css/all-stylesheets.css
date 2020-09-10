@@ -1,0 +1,39 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* Fonts Montserrat and Raleway */
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
+
+/* Bootstrap v3.2.0 */
+@import url("bootstrap/bootstrap.min.css");
+
+/* Main Stylesheet */
+@import url("stylesheet.css");
+
+/* Default Color */
+@import url("colors/greyish-blue.css");
+
+/* Icons Hover Effect Stylesheet */
+@import url("iconhovereffect/component.css");
+
+/* Revolution Slider */
+@import url("../rs-plugin/css/style.css");
+@import url("../rs-plugin/css/settings.css");
+
+/* Items Animation */
+@import url("animations/animate.min.css");
+
+/* Owl Carousel */
+@import url("../owl-carousel/owl-carousel/owl.carousel.css");
+@import url("../owl-carousel/owl-carousel/owl.theme.css");
+@import url("../owl-carousel/owl-carousel/owl.transitions.css");
+
+
+
+/* FontAwesome */
+@import url("../fonts/font-awesome/css/font-awesome.css");
+@import url("../fonts/font-awesome/css/font-awesome.min.css");
+
+/* Magnific Popup core CSS file */
+@import url("../js/magnific-popup/magnific-popup.css");

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ee03cfa14b9e49deadd2c50cac58ff50" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="MashadCarpetDBModel.AgentReq" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.BlogGroups" Width="1.5" PointX="7.75" PointY="2.375" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Blogs" Width="1.5" PointX="10" PointY="1.125" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.City" Width="1.5" PointX="3" PointY="12.25" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Colors" Width="1.5" PointX="6" PointY="33.25" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.ContactUSForm" Width="1.5" PointX="7.75" PointY="7.75" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Discounts" Width="1.5" PointX="7.5" PointY="25.625" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Links" Width="1.5" PointX="9.75" PointY="7.75" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Log_LoginAttemps" Width="1.5" PointX="11.75" PointY="7.75" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Log_ProductExcells" Width="1.5" PointX="7.5" PointY="18.75" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.NewsLetters" Width="1.5" PointX="13.75" PointY="6.75" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.OrderDetails" Width="1.5" PointX="12.75" PointY="12.25" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.OrderStatus" Width="1.5" PointX="5.25" PointY="7.25" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.PaymentLogs" Width="1.5" PointX="9.75" PointY="12" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.PaymentUniqeCodes" Width="1.5" PointX="9.75" PointY="20.25" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Product_Excel" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.ProductColors" Width="1.5" PointX="8.25" PointY="37.625" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.ProductColorSizes" Width="1.5" PointX="10.5" PointY="35.75" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.ProductGroup" Width="1.5" PointX="3.75" PointY="38.125" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Products" Width="1.5" PointX="6" PointY="37.25" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Province" Width="1.5" PointX="0.75" PointY="12.375" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Rel_Discounts_Sizes" Width="1.5" PointX="9.75" PointY="26.125" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Roles" Width="1.5" PointX="3" PointY="8.625" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.SIzes" Width="1.5" PointX="8.25" PointY="30.25" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Slider" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.SliderTexts" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Stores" Width="1.5" PointX="14.75" PointY="10.75" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Texts" Width="1.5" PointX="14.75" PointY="14.75" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.TicketResponse" Width="1.5" PointX="9.75" PointY="16.375" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Tickets" Width="1.5" PointX="7.5" PointY="21.75" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Users" Width="1.5" PointX="5.25" PointY="10.625" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.VisitCounter" Width="1.5" PointX="0.75" PointY="15.75" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Blogs_BlogGroups" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_City_Province" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Users_City" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_ProductColors_Colors" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Discounts_Discounts" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Rel_Discounts_Sizes_Discounts" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Log_ProductExcells_Users" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_OrderDetails_ProductColorSizes" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_ProductColors_Products" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_ProductColorSizes_ProductColors" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_ProductColorSizes_SIzes" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_ProductGroup_ProductGroup" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Products_ProductGroup" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Users_Province" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Rel_Discounts_Sizes_SIzes" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Users_Roles" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_SliderTexts_Slider" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_TicketResponse_Tickets" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_TicketResponse_Users" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Tickets_Users" />
+        <EntityTypeShape EntityType="MashadCarpetDBModel.Orders" Width="1.5" PointX="7.5" PointY="11.125" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_OrderDetails_Orders" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Orders_OrderStatus" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_Orders_Users" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_PaymentLogs_Orders" />
+        <AssociationConnector Association="MashadCarpetDBModel.FK_PaymentUniqeCodes_Orders" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

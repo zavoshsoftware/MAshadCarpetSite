@@ -1,0 +1,52 @@
+﻿body {
+}
+   .owl-theme .owl-controls .owl-buttons
+ {
+     left:0 !important;
+ }
+ 
+/*.breadcrumb > li::before
+{
+    right:84px;
+    background-position:-171px -201px;
+}
+
+.breadcrumb > li
+{
+    padding-right:0;
+    padding-left:58px;
+}
+.breadcrumb > li:before {
+	 
+	background-image: url('../images/sprites/sprite.png');
+ 
+}
+
+.breadcrumb > li {
+	 
+	padding-right:58px;
+ 
+}*/
+.accordion-title .accordion-btn {
+   
+    right: 0;
+}
+
+.category-widget-btn {
+ 
+    left:10px;
+ 
+}
+.valign-nav .owl-theme .owl-controls .owl-buttons div.owl-prev
+{
+    left:110px !important;
+}
+.leftinFa{
+    left:0 !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: BYekan !important;
+}
+.product-name {
+    font-family: BYekan !important;
+}

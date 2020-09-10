@@ -1,0 +1,128 @@
+﻿body {
+}
+
+.product-name.text-right, .carousel-title, .blog-posts-carousel  h4, #footer h4, #footer a,
+#category-widget > li > a,.sidebar h3,.widget .accordion-title,.product-single-meta .product-name,
+.text-right,.owl-carousel .article p,.menu li a
+{
+    text-align:left !important;
+    }
+
+.product-view-btn, .product-add-btn ,.nav-tabs > li 
+{
+   float:left !important;
+    }
+.service-icon
+{
+    margin-left:0 !important;
+    margin-right:30px !important;
+   float:left !important;
+
+}
+.service-content {
+    margin-right : 0 !important;
+}
+.newestinHome .owl-theme .owl-controls .owl-buttons,
+.owl-theme .owl-controls .owl-buttons
+{
+    position:absolute ;
+    right:0 !important;
+} 
+.col-sm-5{
+    float:right !important;
+}
+.breadcrumb ,.article h2, .article h2 a, p
+{
+    direction:ltr !important;
+    text-align:left !important;
+}
+ 
+.breadcrumb > li::before:first-child
+{
+    left:54px;
+    
+}
+.breadcrumb > li::before
+{
+    left:110px;
+    
+}
+.breadcrumb li:first-child
+{
+    padding-left:0 !important;
+}
+.breadcrumb > li {	 
+	padding:4px !important;
+ 
+}
+.accordion-title .accordion-btn {
+   
+    left: 0 !important;
+}
+.accordion-title > span
+{
+    padding:0 0 0 40px !important;
+}
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9
+{
+    float:right !important;
+}
+ .product-single-meta ul li
+{
+    direction:ltr !important;
+    text-align:left !important;
+    float:left !important;
+}
+.newfilterbox {
+    margin-left: 0 !important;
+}
+.newfilterbox, .filter-color-box, .filter-size-box, .product-single-meta .product-action-content,
+.pull-right {
+    float: left !important;
+}
+ .marginright120
+ {
+     margin-left: 120px !important;
+     margin-right: 0px !important;
+ }
+  .valign-nav .owl-theme .owl-controls .owl-buttons div.owl-prev
+  {
+      left:90px !important;
+  }
+  
+.category-widget-btn {
+ right:10px !important;
+}
+
+.pull-left
+{
+    float:right !important;
+}
+
+
+ .right-side-wrapper, #main-nav
+{
+    float:left !important;
+}#main-nav
+ {
+     margin-left:0 !important;
+     margin-right:28px !important;
+ }
+ .menu li, .header2 .menu>li 
+ {
+     float:left !important;
+ }
+ .floatleftinen
+  {
+     float:right !important;
+ }
+ .filter-size-box.active,.pricestyle,.product-name a
+ {
+     font-family:Calibri !important;
+ }
+ .leftinFa{
+    right :0 !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Droid Arabic Naskh',serif !important;
+}

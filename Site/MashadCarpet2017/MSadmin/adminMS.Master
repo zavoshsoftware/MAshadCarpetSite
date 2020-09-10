@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="adminMS.master.cs" Inherits="MashadCarpet.MSadmin.adminMS" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../js/bootstrap.js"></script> 
+    <link href="../css/DrJartStyle.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+ 
+   <div class="col-md-8">
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+   </div>
+      <div class="col-md-4"><div class="list-group">
+  <a href="#" class="list-group-item disabled directionrtl">
+   صفحه اصلی سایت
+  </a>
+  <a href="#" class="list-group-item directionrtl">ورود کاربران</a> 
+</div></div>
+</body>
+</html>

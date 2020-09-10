@@ -1,0 +1,2533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MashadCarpetDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AgentReq">
+          <Key>
+            <PropertyRef Name="AgentID" />
+          </Key>
+          <Property Name="AgentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="NationalID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Birthday" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsMale" Type="bit" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="startDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="website" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="ntext" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="ntext" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BlogGroups">
+          <Key>
+            <PropertyRef Name="BlogGroupID" />
+          </Key>
+          <Property Name="BlogGroupID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BlogGroupTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="EN_BlogGroupTitle" Type="varchar" MaxLength="200" />
+          <Property Name="BlogGroupName" Type="varchar" MaxLength="150" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="Rus_BlogGroupTitle" Type="nvarchar" MaxLength="150" />
+          <Property Name="China_BlogGroupTitle" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Blogs">
+          <Key>
+            <PropertyRef Name="BlogID" />
+          </Key>
+          <Property Name="BlogID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BlogTitle" Type="nvarchar(max)" />
+          <Property Name="EN_BlogTitle" Type="varchar(max)" />
+          <Property Name="BlogName" Type="nvarchar" MaxLength="200" />
+          <Property Name="BlogText" Type="ntext" />
+          <Property Name="EN_BlogText" Type="ntext" />
+          <Property Name="SubmitDate" Type="datetime" />
+          <Property Name="BlogImage" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="fk_BlogGroupID" Type="uniqueidentifier" />
+          <Property Name="fk_UserID" Type="uniqueidentifier" />
+          <Property Name="VisitCounts" Type="int" />
+          <Property Name="Rus_BlogTitle" Type="nvarchar(max)" />
+          <Property Name="China_BlogTitle" Type="nvarchar(max)" />
+          <Property Name="Rus_BlogText" Type="ntext" />
+          <Property Name="China_BlogText" Type="ntext" />
+          <Property Name="BlogSummery" Type="ntext" />
+          <Property Name="EN_BlogSummery" Type="ntext" />
+          <Property Name="Rus_BlogSummery" Type="ntext" />
+          <Property Name="China_BlogSummery" Type="ntext" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProvinceID" Type="int" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Center" Type="bit" />
+          <Property Name="EN_CityName" Type="varchar" MaxLength="150" />
+          <Property Name="Rus_CityName" Type="varchar" MaxLength="150" />
+          <Property Name="China_CityName" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Colors">
+          <Key>
+            <PropertyRef Name="ColorID" />
+          </Key>
+          <Property Name="ColorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ColorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ColorTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="ColorEN_Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="ColorNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rus_ColorTitle" Type="nvarchar" MaxLength="150" />
+          <Property Name="China_ColorTitle" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="ContactUSForm">
+          <Key>
+            <PropertyRef Name="ContactusID" />
+          </Key>
+          <Property Name="ContactusID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ContactusName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactusEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactusMsg" Type="ntext" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Discounts">
+          <Key>
+            <PropertyRef Name="DiscountID" />
+          </Key>
+          <Property Name="DiscountID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="fk_UserID" Type="uniqueidentifier" />
+          <Property Name="DiscountPercent" Type="float" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="SubmitDate" Type="datetime" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="150" />
+          <Property Name="imgFile" Type="nvarchar" MaxLength="50" />
+          <Property Name="LinkAddres" Type="ntext" />
+          <Property Name="RegisterDate" Type="datetime" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="title_En" Type="nvarchar" MaxLength="150" />
+          <Property Name="title_Ru" Type="nvarchar" MaxLength="150" />
+          <Property Name="title_Ch" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Log_LoginAttemps">
+          <Key>
+            <PropertyRef Name="LoginLogID" />
+          </Key>
+          <Property Name="LoginLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="VisitDate" Type="datetime" Nullable="false" />
+          <Property Name="IP" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Browser" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="OS" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="RefrallPage" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsSuccess" Type="bit" />
+        </EntityType>
+        <EntityType Name="Log_ProductExcells">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="excelFilename" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubmitDate" Type="datetime" />
+          <Property Name="SubmitIP" Type="varchar" MaxLength="50" />
+          <Property Name="fk_UserIDSubmited" Type="uniqueidentifier" />
+          <Property Name="IsSuccess" Type="bit" />
+          <Property Name="ErrorMsg" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="NewsLetters">
+          <Key>
+            <PropertyRef Name="NewsLetterID" />
+          </Key>
+          <Property Name="NewsLetterID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NewsLetterEmail" Type="varchar" MaxLength="50" />
+          <Property Name="SubmitDate" Type="datetime" />
+          <Property Name="SubmitIP" Type="varchar" MaxLength="20" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="IsValid" Type="bit" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="OrderDetailID" />
+          </Key>
+          <Property Name="OrderDetailID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fk_OrderID" Type="uniqueidentifier" />
+          <Property Name="Count" Type="int" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="fk_ProductColorSizeID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fk_UserID" Type="uniqueidentifier" />
+          <Property Name="SubmitDate" Type="datetime" />
+          <Property Name="IsFinalized" Type="bit" />
+          <Property Name="IsPaid" Type="bit" />
+          <Property Name="RecipientName" Type="nvarchar" MaxLength="50" />
+          <Property Name="RecipientPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="RecipientAddress" Type="ntext" />
+          <Property Name="PaymentWay" Type="int" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="CustomerOrderID" Type="nvarchar" MaxLength="50" />
+          <Property Name="fk_OrderStatusID" Type="int" />
+          <Property Name="OrderDesc" Type="ntext" />
+          <Property Name="FinalPrice" Type="money" />
+          <Property Name="OrderShowID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsNewOrder" Type="bit" />
+          <Property Name="PaymentDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="OrderStatusID" />
+          </Key>
+          <Property Name="OrderStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderStatusTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="EN_OrderStatus" Type="varchar" MaxLength="150" />
+          <Property Name="Rus_OrderStatus" Type="nvarchar" MaxLength="150" />
+          <Property Name="China_OrderStatus" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="PaymentLogs">
+          <Key>
+            <PropertyRef Name="PaymentLogID" />
+          </Key>
+          <Property Name="PaymentLogID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fk_OrderID" Type="uniqueidentifier" />
+          <Property Name="RefID" Type="varchar" MaxLength="50" />
+          <Property Name="SaleReferenceId" Type="bigint" />
+          <Property Name="ResCode_Request" Type="int" />
+          <Property Name="ResCode_Payment" Type="int" />
+          <Property Name="ResCode_Verify" Type="int" />
+          <Property Name="ResCode_Settle" Type="int" />
+          <Property Name="ErrorMessage" Type="ntext" />
+          <Property Name="IsSuccess" Type="bit" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="PaymentIP" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PaymentUniqeCodes">
+          <Key>
+            <PropertyRef Name="PayementUniqeCodeID" />
+          </Key>
+          <Property Name="PayementUniqeCodeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_OrderID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product_Excel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Count" Type="int" />
+          <Property Name="Code" Type="int" />
+          <Property Name="Size" Type="int" />
+          <Property Name="Color" Type="int" />
+          <Property Name="Cost" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ProductColors">
+          <Key>
+            <PropertyRef Name="ProductColorID" />
+          </Key>
+          <Property Name="ProductColorID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fk_ProductID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fk_ColorID" Type="int" Nullable="false" />
+          <Property Name="ProductImage" Type="nvarchar" MaxLength="40" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="Priority" Type="int" />
+        </EntityType>
+        <EntityType Name="ProductColorSizes">
+          <Key>
+            <PropertyRef Name="ProductColorSizeID" />
+          </Key>
+          <Property Name="ProductColorSizeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fk_ProductColorID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fk_SizeID" Type="int" Nullable="false" />
+          <Property Name="ProductPrice" Type="money" />
+          <Property Name="Stock" Type="int" />
+          <Property Name="IsAvailable" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="FileName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ProductGroup">
+          <Key>
+            <PropertyRef Name="ProductGroupID" />
+          </Key>
+          <Property Name="ProductGroupID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductGroupTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="EN_ProductGroupTitle" Type="varchar" MaxLength="200" />
+          <Property Name="ProductGroupName" Type="varchar" MaxLength="200" />
+          <Property Name="ProductGroupImage" Type="varchar" MaxLength="50" />
+          <Property Name="ProductGroupDesc" Type="ntext" />
+          <Property Name="EN_ProductGroupDesc" Type="ntext" />
+          <Property Name="fk_ProductGroupID" Type="uniqueidentifier" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="ProductGroupTitle2" Type="nvarchar" MaxLength="200" />
+          <Property Name="EN_ProductGroupTitle2" Type="nvarchar" MaxLength="200" />
+          <Property Name="HomeTitleColor" Type="nvarchar" MaxLength="50" />
+          <Property Name="HomeTitleColor2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rus_ProductGroupTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="China_ProductGroupTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="Rus_ProductGroupDesc" Type="ntext" />
+          <Property Name="China_ProductGroupDesc" Type="ntext" />
+          <Property Name="Rus_ProductGroupTitle2" Type="nvarchar" MaxLength="200" />
+          <Property Name="China_ProductGroupTitle2" Type="nvarchar" MaxLength="200" />
+          <Property Name="imgSliderImage" Type="nvarchar" MaxLength="40" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="IsAlienCulture" Type="bit" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="EN_ProductTitle" Type="varchar" MaxLength="200" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="200" />
+          <Property Name="fk_ProductGroupID" Type="uniqueidentifier" />
+          <Property Name="DesignNo" Type="int" />
+          <Property Name="Frame" Type="int" />
+          <Property Name="Collection" Type="nvarchar" MaxLength="50" />
+          <Property Name="PileType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reeds" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shots" Type="nvarchar" MaxLength="50" />
+          <Property Name="Points" Type="nvarchar" MaxLength="50" />
+          <Property Name="Knots" Type="nvarchar" MaxLength="50" />
+          <Property Name="EN_Collection" Type="varchar" MaxLength="50" />
+          <Property Name="EN_PileType" Type="varchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="IsEspecial" Type="bit" />
+          <Property Name="submitDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="IsMostSell" Type="bit" />
+          <Property Name="Rus_ProductTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="China_ProductTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="Rus_Collection" Type="nvarchar" MaxLength="200" />
+          <Property Name="China_Collection" Type="nvarchar" MaxLength="200" />
+          <Property Name="Rus_PileType" Type="nvarchar" MaxLength="200" />
+          <Property Name="China_PileType" Type="nvarchar" MaxLength="200" />
+          <Property Name="ThumbImage1" Type="nvarchar" MaxLength="50" />
+          <Property Name="ThumbImage2" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductUniqeCode" Type="int" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="ProDesc" Type="ntext" />
+          <Property Name="IsAlienCulture" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Province">
+          <Key>
+            <PropertyRef Name="ProvinceID" />
+          </Key>
+          <Property Name="ProvinceID" Type="int" Nullable="false" />
+          <Property Name="ProvinceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EN_ProvinceName" Type="varchar" MaxLength="150" />
+          <Property Name="Rus_ProvinceName" Type="varchar" MaxLength="150" />
+          <Property Name="China_ProvinceName" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Rel_Discounts_Sizes">
+          <Key>
+            <PropertyRef Name="Rel_Discount_SizesID" />
+          </Key>
+          <Property Name="Rel_Discount_SizesID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fk_DiscountID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fk_SizeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="RoleTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SIzes">
+          <Key>
+            <PropertyRef Name="SizeID" />
+          </Key>
+          <Property Name="SizeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SizeTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="SliderID" />
+          </Key>
+          <Property Name="SliderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SliderImage" Type="nvarchar" MaxLength="50" />
+          <Property Name="SliderTitle" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SliderTexts">
+          <Key>
+            <PropertyRef Name="SliderTextID" />
+          </Key>
+          <Property Name="SliderTextID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_SliderID" Type="int" Nullable="false" />
+          <Property Name="datax" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="datay" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="speed" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="start" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsLink" Type="bit" Nullable="false" />
+          <Property Name="LinkAddress" Type="nvarchar(max)" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="InAndOutClass" Type="nvarchar" MaxLength="50" />
+          <Property Name="textColor" Type="nvarchar" MaxLength="50" />
+          <Property Name="EN_Text" Type="varchar(max)" />
+          <Property Name="Rus_Text" Type="nvarchar(max)" />
+          <Property Name="China_Text" Type="nvarchar(max)" />
+          <Property Name="fontsize" Type="int" />
+        </EntityType>
+        <EntityType Name="Stores">
+          <Key>
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="StoreID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StoreName" Type="nvarchar" MaxLength="250" />
+          <Property Name="StorePhone" Type="nvarchar" MaxLength="150" />
+          <Property Name="StoreAddress" Type="ntext" />
+          <Property Name="StoreCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="IsStore" Type="bit" />
+          <Property Name="Prov" Type="nvarchar" MaxLength="50" />
+          <Property Name="StoreDesc" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Texts">
+          <Key>
+            <PropertyRef Name="TextID" />
+          </Key>
+          <Property Name="TextID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TextTitle" Type="nvarchar(max)" />
+          <Property Name="EN_TextTitle" Type="varchar(max)" />
+          <Property Name="TextDescription" Type="ntext" />
+          <Property Name="EN_TextDescription" Type="ntext" />
+          <Property Name="TextImage" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="GroupID" Type="int" />
+          <Property Name="TextName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Rus_TextTitle" Type="nvarchar(max)" />
+          <Property Name="China_TextTitle" Type="nvarchar(max)" />
+          <Property Name="Rus_TextDescription" Type="ntext" />
+          <Property Name="China_TextDescription" Type="ntext" />
+        </EntityType>
+        <EntityType Name="TicketResponse">
+          <Key>
+            <PropertyRef Name="TicketResponseID" />
+          </Key>
+          <Property Name="TicketResponseID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fk_TicketID" Type="uniqueidentifier" />
+          <Property Name="ResponseText" Type="ntext" />
+          <Property Name="ResponseDate" Type="datetime" />
+          <Property Name="fk_UserID" Type="uniqueidentifier" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tickets">
+          <Key>
+            <PropertyRef Name="TicketID" />
+          </Key>
+          <Property Name="TicketID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TicketSubject" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status" Type="int" />
+          <Property Name="fk_UserID" Type="uniqueidentifier" />
+          <Property Name="TicketDate" Type="datetime" />
+          <Property Name="IsValid" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="TicketMessage" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserFamily" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address1" Type="ntext" />
+          <Property Name="Address2" Type="ntext" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="fk_RoleID" Type="int" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="DeleteDate" Type="datetime" />
+          <Property Name="RegisterDate" Type="datetime" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegisterIP" Type="varchar" MaxLength="20" />
+          <Property Name="ProvinceID" Type="int" />
+          <Property Name="CityID" Type="int" />
+        </EntityType>
+        <EntityType Name="VisitCounter">
+          <Key>
+            <PropertyRef Name="VisitID" />
+          </Key>
+          <Property Name="VisitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientIP" Type="varchar" MaxLength="20" />
+          <Property Name="OS" Type="varchar" MaxLength="50" />
+          <Property Name="Browser" Type="varchar" MaxLength="50" />
+          <Property Name="RefrallPage" Type="nvarchar" MaxLength="500" />
+          <Property Name="VisitDate" Type="datetime" />
+          <Property Name="TotalVisit" Type="int" />
+          <Property Name="VisitCount" Type="int" />
+        </EntityType>
+        <Association Name="FK_Blogs_BlogGroups">
+          <End Role="BlogGroups" Type="Self.BlogGroups" Multiplicity="0..1" />
+          <End Role="Blogs" Type="Self.Blogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogGroups">
+              <PropertyRef Name="BlogGroupID" />
+            </Principal>
+            <Dependent Role="Blogs">
+              <PropertyRef Name="fk_BlogGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_Province">
+          <End Role="Province" Type="Self.Province" Multiplicity="1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Discounts_Discounts">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Discounts" Type="Self.Discounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Discounts">
+              <PropertyRef Name="fk_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Log_ProductExcells_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Log_ProductExcells" Type="Self.Log_ProductExcells" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Log_ProductExcells">
+              <PropertyRef Name="fk_UserIDSubmited" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetails_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="fk_OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetails_ProductColorSizes">
+          <End Role="ProductColorSizes" Type="Self.ProductColorSizes" Multiplicity="0..1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductColorSizes">
+              <PropertyRef Name="ProductColorSizeID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="fk_ProductColorSizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_OrderStatus">
+          <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="OrderStatusID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="fk_OrderStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="fk_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentLogs_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PaymentLogs" Type="Self.PaymentLogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="PaymentLogs">
+              <PropertyRef Name="fk_OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentUniqeCodes_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PaymentUniqeCodes" Type="Self.PaymentUniqeCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="PaymentUniqeCodes">
+              <PropertyRef Name="fk_OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductColors_Colors">
+          <End Role="Colors" Type="Self.Colors" Multiplicity="1" />
+          <End Role="ProductColors" Type="Self.ProductColors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colors">
+              <PropertyRef Name="ColorID" />
+            </Principal>
+            <Dependent Role="ProductColors">
+              <PropertyRef Name="fk_ColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductColors_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProductColors" Type="Self.ProductColors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductColors">
+              <PropertyRef Name="fk_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductColorSizes_ProductColors">
+          <End Role="ProductColors" Type="Self.ProductColors" Multiplicity="1" />
+          <End Role="ProductColorSizes" Type="Self.ProductColorSizes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductColors">
+              <PropertyRef Name="ProductColorID" />
+            </Principal>
+            <Dependent Role="ProductColorSizes">
+              <PropertyRef Name="fk_ProductColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductColorSizes_SIzes">
+          <End Role="SIzes" Type="Self.SIzes" Multiplicity="1" />
+          <End Role="ProductColorSizes" Type="Self.ProductColorSizes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIzes">
+              <PropertyRef Name="SizeID" />
+            </Principal>
+            <Dependent Role="ProductColorSizes">
+              <PropertyRef Name="fk_SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductGroup_ProductGroup">
+          <End Role="ProductGroup" Type="Self.ProductGroup" Multiplicity="0..1" />
+          <End Role="ProductGroup1" Type="Self.ProductGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductGroup">
+              <PropertyRef Name="ProductGroupID" />
+            </Principal>
+            <Dependent Role="ProductGroup1">
+              <PropertyRef Name="fk_ProductGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_ProductGroup">
+          <End Role="ProductGroup" Type="Self.ProductGroup" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductGroup">
+              <PropertyRef Name="ProductGroupID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="fk_ProductGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rel_Discounts_Sizes_Discounts">
+          <End Role="Discounts" Type="Self.Discounts" Multiplicity="1" />
+          <End Role="Rel_Discounts_Sizes" Type="Self.Rel_Discounts_Sizes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discounts">
+              <PropertyRef Name="DiscountID" />
+            </Principal>
+            <Dependent Role="Rel_Discounts_Sizes">
+              <PropertyRef Name="fk_DiscountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rel_Discounts_Sizes_SIzes">
+          <End Role="SIzes" Type="Self.SIzes" Multiplicity="1" />
+          <End Role="Rel_Discounts_Sizes" Type="Self.Rel_Discounts_Sizes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIzes">
+              <PropertyRef Name="SizeID" />
+            </Principal>
+            <Dependent Role="Rel_Discounts_Sizes">
+              <PropertyRef Name="fk_SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SliderTexts_Slider">
+          <End Role="Slider" Type="Self.Slider" Multiplicity="1" />
+          <End Role="SliderTexts" Type="Self.SliderTexts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Slider">
+              <PropertyRef Name="SliderID" />
+            </Principal>
+            <Dependent Role="SliderTexts">
+              <PropertyRef Name="fk_SliderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketResponse_Tickets">
+          <End Role="Tickets" Type="Self.Tickets" Multiplicity="0..1" />
+          <End Role="TicketResponse" Type="Self.TicketResponse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tickets">
+              <PropertyRef Name="TicketID" />
+            </Principal>
+            <Dependent Role="TicketResponse">
+              <PropertyRef Name="fk_TicketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketResponse_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TicketResponse" Type="Self.TicketResponse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TicketResponse">
+              <PropertyRef Name="fk_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tickets_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="fk_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_City">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Province">
+          <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="fk_RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MashadCarpetDBModelStoreContainer">
+          <EntitySet Name="AgentReq" EntityType="Self.AgentReq" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BlogGroups" EntityType="Self.BlogGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blogs" EntityType="Self.Blogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Colors" EntityType="Self.Colors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactUSForm" EntityType="Self.ContactUSForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Discounts" EntityType="Self.Discounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Links" EntityType="Self.Links" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_LoginAttemps" EntityType="Self.Log_LoginAttemps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_ProductExcells" EntityType="Self.Log_ProductExcells" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewsLetters" EntityType="Self.NewsLetters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentLogs" EntityType="Self.PaymentLogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentUniqeCodes" EntityType="Self.PaymentUniqeCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_Excel" EntityType="Self.Product_Excel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductColors" EntityType="Self.ProductColors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductColorSizes" EntityType="Self.ProductColorSizes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductGroup" EntityType="Self.ProductGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rel_Discounts_Sizes" EntityType="Self.Rel_Discounts_Sizes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SIzes" EntityType="Self.SIzes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SliderTexts" EntityType="Self.SliderTexts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stores" EntityType="Self.Stores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Texts" EntityType="Self.Texts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TicketResponse" EntityType="Self.TicketResponse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VisitCounter" EntityType="Self.VisitCounter" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Blogs_BlogGroups" Association="Self.FK_Blogs_BlogGroups">
+            <End Role="BlogGroups" EntitySet="BlogGroups" />
+            <End Role="Blogs" EntitySet="Blogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Province" Association="Self.FK_City_Province">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Discounts_Discounts" Association="Self.FK_Discounts_Discounts">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Discounts" EntitySet="Discounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Log_ProductExcells_Users" Association="Self.FK_Log_ProductExcells_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Log_ProductExcells" EntitySet="Log_ProductExcells" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_Orders" Association="Self.FK_OrderDetails_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_ProductColorSizes" Association="Self.FK_OrderDetails_ProductColorSizes">
+            <End Role="ProductColorSizes" EntitySet="ProductColorSizes" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_OrderStatus" Association="Self.FK_Orders_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Users" Association="Self.FK_Orders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentLogs_Orders" Association="Self.FK_PaymentLogs_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="PaymentLogs" EntitySet="PaymentLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentUniqeCodes_Orders" Association="Self.FK_PaymentUniqeCodes_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="PaymentUniqeCodes" EntitySet="PaymentUniqeCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductColors_Colors" Association="Self.FK_ProductColors_Colors">
+            <End Role="Colors" EntitySet="Colors" />
+            <End Role="ProductColors" EntitySet="ProductColors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductColors_Products" Association="Self.FK_ProductColors_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductColors" EntitySet="ProductColors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductColorSizes_ProductColors" Association="Self.FK_ProductColorSizes_ProductColors">
+            <End Role="ProductColors" EntitySet="ProductColors" />
+            <End Role="ProductColorSizes" EntitySet="ProductColorSizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductColorSizes_SIzes" Association="Self.FK_ProductColorSizes_SIzes">
+            <End Role="SIzes" EntitySet="SIzes" />
+            <End Role="ProductColorSizes" EntitySet="ProductColorSizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductGroup_ProductGroup" Association="Self.FK_ProductGroup_ProductGroup">
+            <End Role="ProductGroup" EntitySet="ProductGroup" />
+            <End Role="ProductGroup1" EntitySet="ProductGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_ProductGroup" Association="Self.FK_Products_ProductGroup">
+            <End Role="ProductGroup" EntitySet="ProductGroup" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rel_Discounts_Sizes_Discounts" Association="Self.FK_Rel_Discounts_Sizes_Discounts">
+            <End Role="Discounts" EntitySet="Discounts" />
+            <End Role="Rel_Discounts_Sizes" EntitySet="Rel_Discounts_Sizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rel_Discounts_Sizes_SIzes" Association="Self.FK_Rel_Discounts_Sizes_SIzes">
+            <End Role="SIzes" EntitySet="SIzes" />
+            <End Role="Rel_Discounts_Sizes" EntitySet="Rel_Discounts_Sizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SliderTexts_Slider" Association="Self.FK_SliderTexts_Slider">
+            <End Role="Slider" EntitySet="Slider" />
+            <End Role="SliderTexts" EntitySet="SliderTexts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketResponse_Tickets" Association="Self.FK_TicketResponse_Tickets">
+            <End Role="Tickets" EntitySet="Tickets" />
+            <End Role="TicketResponse" EntitySet="TicketResponse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketResponse_Users" Association="Self.FK_TicketResponse_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TicketResponse" EntitySet="TicketResponse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tickets_Users" Association="Self.FK_Tickets_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_City" Association="Self.FK_Users_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Province" Association="Self.FK_Users_Province">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MashadCarpetDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MashadCarpetEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AgentReq" EntityType="MashadCarpetDBModel.AgentReq" />
+          <EntitySet Name="BlogGroups" EntityType="MashadCarpetDBModel.BlogGroups" />
+          <EntitySet Name="Blogs" EntityType="MashadCarpetDBModel.Blogs" />
+          <EntitySet Name="City" EntityType="MashadCarpetDBModel.City" />
+          <EntitySet Name="Colors" EntityType="MashadCarpetDBModel.Colors" />
+          <EntitySet Name="ContactUSForm" EntityType="MashadCarpetDBModel.ContactUSForm" />
+          <EntitySet Name="Discounts" EntityType="MashadCarpetDBModel.Discounts" />
+          <EntitySet Name="Links" EntityType="MashadCarpetDBModel.Links" />
+          <EntitySet Name="Log_LoginAttemps" EntityType="MashadCarpetDBModel.Log_LoginAttemps" />
+          <EntitySet Name="Log_ProductExcells" EntityType="MashadCarpetDBModel.Log_ProductExcells" />
+          <EntitySet Name="NewsLetters" EntityType="MashadCarpetDBModel.NewsLetters" />
+          <EntitySet Name="OrderDetails" EntityType="MashadCarpetDBModel.OrderDetails" />
+          <EntitySet Name="OrderStatus" EntityType="MashadCarpetDBModel.OrderStatus" />
+          <EntitySet Name="PaymentLogs" EntityType="MashadCarpetDBModel.PaymentLogs" />
+          <EntitySet Name="PaymentUniqeCodes" EntityType="MashadCarpetDBModel.PaymentUniqeCodes" />
+          <EntitySet Name="Product_Excel" EntityType="MashadCarpetDBModel.Product_Excel" />
+          <EntitySet Name="ProductColors" EntityType="MashadCarpetDBModel.ProductColors" />
+          <EntitySet Name="ProductColorSizes" EntityType="MashadCarpetDBModel.ProductColorSizes" />
+          <EntitySet Name="ProductGroup" EntityType="MashadCarpetDBModel.ProductGroup" />
+          <EntitySet Name="Products" EntityType="MashadCarpetDBModel.Products" />
+          <EntitySet Name="Province" EntityType="MashadCarpetDBModel.Province" />
+          <EntitySet Name="Rel_Discounts_Sizes" EntityType="MashadCarpetDBModel.Rel_Discounts_Sizes" />
+          <EntitySet Name="Roles" EntityType="MashadCarpetDBModel.Roles" />
+          <EntitySet Name="SIzes" EntityType="MashadCarpetDBModel.SIzes" />
+          <EntitySet Name="Slider" EntityType="MashadCarpetDBModel.Slider" />
+          <EntitySet Name="SliderTexts" EntityType="MashadCarpetDBModel.SliderTexts" />
+          <EntitySet Name="Stores" EntityType="MashadCarpetDBModel.Stores" />
+          <EntitySet Name="Texts" EntityType="MashadCarpetDBModel.Texts" />
+          <EntitySet Name="TicketResponse" EntityType="MashadCarpetDBModel.TicketResponse" />
+          <EntitySet Name="Tickets" EntityType="MashadCarpetDBModel.Tickets" />
+          <EntitySet Name="Users" EntityType="MashadCarpetDBModel.Users" />
+          <EntitySet Name="VisitCounter" EntityType="MashadCarpetDBModel.VisitCounter" />
+          <AssociationSet Name="FK_Blogs_BlogGroups" Association="MashadCarpetDBModel.FK_Blogs_BlogGroups">
+            <End Role="BlogGroups" EntitySet="BlogGroups" />
+            <End Role="Blogs" EntitySet="Blogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Province" Association="MashadCarpetDBModel.FK_City_Province">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_City" Association="MashadCarpetDBModel.FK_Users_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductColors_Colors" Association="MashadCarpetDBModel.FK_ProductColors_Colors">
+            <End Role="Colors" EntitySet="Colors" />
+            <End Role="ProductColors" EntitySet="ProductColors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Discounts_Discounts" Association="MashadCarpetDBModel.FK_Discounts_Discounts">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Discounts" EntitySet="Discounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rel_Discounts_Sizes_Discounts" Association="MashadCarpetDBModel.FK_Rel_Discounts_Sizes_Discounts">
+            <End Role="Discounts" EntitySet="Discounts" />
+            <End Role="Rel_Discounts_Sizes" EntitySet="Rel_Discounts_Sizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Log_ProductExcells_Users" Association="MashadCarpetDBModel.FK_Log_ProductExcells_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Log_ProductExcells" EntitySet="Log_ProductExcells" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_ProductColorSizes" Association="MashadCarpetDBModel.FK_OrderDetails_ProductColorSizes">
+            <End Role="ProductColorSizes" EntitySet="ProductColorSizes" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductColors_Products" Association="MashadCarpetDBModel.FK_ProductColors_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductColors" EntitySet="ProductColors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductColorSizes_ProductColors" Association="MashadCarpetDBModel.FK_ProductColorSizes_ProductColors">
+            <End Role="ProductColors" EntitySet="ProductColors" />
+            <End Role="ProductColorSizes" EntitySet="ProductColorSizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductColorSizes_SIzes" Association="MashadCarpetDBModel.FK_ProductColorSizes_SIzes">
+            <End Role="SIzes" EntitySet="SIzes" />
+            <End Role="ProductColorSizes" EntitySet="ProductColorSizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductGroup_ProductGroup" Association="MashadCarpetDBModel.FK_ProductGroup_ProductGroup">
+            <End Role="ProductGroup" EntitySet="ProductGroup" />
+            <End Role="ProductGroup1" EntitySet="ProductGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_ProductGroup" Association="MashadCarpetDBModel.FK_Products_ProductGroup">
+            <End Role="ProductGroup" EntitySet="ProductGroup" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Province" Association="MashadCarpetDBModel.FK_Users_Province">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rel_Discounts_Sizes_SIzes" Association="MashadCarpetDBModel.FK_Rel_Discounts_Sizes_SIzes">
+            <End Role="SIzes" EntitySet="SIzes" />
+            <End Role="Rel_Discounts_Sizes" EntitySet="Rel_Discounts_Sizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Roles" Association="MashadCarpetDBModel.FK_Users_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SliderTexts_Slider" Association="MashadCarpetDBModel.FK_SliderTexts_Slider">
+            <End Role="Slider" EntitySet="Slider" />
+            <End Role="SliderTexts" EntitySet="SliderTexts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketResponse_Tickets" Association="MashadCarpetDBModel.FK_TicketResponse_Tickets">
+            <End Role="Tickets" EntitySet="Tickets" />
+            <End Role="TicketResponse" EntitySet="TicketResponse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketResponse_Users" Association="MashadCarpetDBModel.FK_TicketResponse_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TicketResponse" EntitySet="TicketResponse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tickets_Users" Association="MashadCarpetDBModel.FK_Tickets_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <EntitySet Name="Orders" EntityType="MashadCarpetDBModel.Orders" />
+          <AssociationSet Name="FK_OrderDetails_Orders" Association="MashadCarpetDBModel.FK_OrderDetails_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_OrderStatus" Association="MashadCarpetDBModel.FK_Orders_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Users" Association="MashadCarpetDBModel.FK_Orders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentLogs_Orders" Association="MashadCarpetDBModel.FK_PaymentLogs_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="PaymentLogs" EntitySet="PaymentLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentUniqeCodes_Orders" Association="MashadCarpetDBModel.FK_PaymentUniqeCodes_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="PaymentUniqeCodes" EntitySet="PaymentUniqeCodes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AgentReq">
+          <Key>
+            <PropertyRef Name="AgentID" />
+          </Key>
+          <Property Name="AgentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NationalID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsMale" Type="Boolean" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="startDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BlogGroups">
+          <Key>
+            <PropertyRef Name="BlogGroupID" />
+          </Key>
+          <Property Name="BlogGroupID" Type="Guid" Nullable="false" />
+          <Property Name="BlogGroupTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EN_BlogGroupTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BlogGroupName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="Rus_BlogGroupTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="China_BlogGroupTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Blogs" Relationship="MashadCarpetDBModel.FK_Blogs_BlogGroups" FromRole="BlogGroups" ToRole="Blogs" />
+        </EntityType>
+        <EntityType Name="Blogs">
+          <Key>
+            <PropertyRef Name="BlogID" />
+          </Key>
+          <Property Name="BlogID" Type="Guid" Nullable="false" />
+          <Property Name="BlogTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EN_BlogTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BlogName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BlogText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EN_BlogText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubmitDate" Type="DateTime" Precision="3" />
+          <Property Name="BlogImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="fk_BlogGroupID" Type="Guid" />
+          <Property Name="fk_UserID" Type="Guid" />
+          <Property Name="VisitCounts" Type="Int32" />
+          <Property Name="Rus_BlogTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="China_BlogTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rus_BlogText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="China_BlogText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BlogSummery" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EN_BlogSummery" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rus_BlogSummery" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="China_BlogSummery" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BlogGroups" Relationship="MashadCarpetDBModel.FK_Blogs_BlogGroups" FromRole="Blogs" ToRole="BlogGroups" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProvinceID" Type="Int32" Nullable="false" />
+          <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Center" Type="Boolean" />
+          <Property Name="EN_CityName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Rus_CityName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="China_CityName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Province" Relationship="MashadCarpetDBModel.FK_City_Province" FromRole="City" ToRole="Province" />
+          <NavigationProperty Name="Users" Relationship="MashadCarpetDBModel.FK_Users_City" FromRole="City" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Colors">
+          <Key>
+            <PropertyRef Name="ColorID" />
+          </Key>
+          <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ColorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ColorTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ColorEN_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="ColorNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rus_ColorTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="China_ColorTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ProductColors" Relationship="MashadCarpetDBModel.FK_ProductColors_Colors" FromRole="Colors" ToRole="ProductColors" />
+        </EntityType>
+        <EntityType Name="ContactUSForm">
+          <Key>
+            <PropertyRef Name="ContactusID" />
+          </Key>
+          <Property Name="ContactusID" Type="Guid" Nullable="false" />
+          <Property Name="ContactusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactusEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactusMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Discounts">
+          <Key>
+            <PropertyRef Name="DiscountID" />
+          </Key>
+          <Property Name="DiscountID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="fk_UserID" Type="Guid" />
+          <Property Name="DiscountPercent" Type="Double" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="SubmitDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Users" Relationship="MashadCarpetDBModel.FK_Discounts_Discounts" FromRole="Discounts" ToRole="Users" />
+          <NavigationProperty Name="Rel_Discounts_Sizes" Relationship="MashadCarpetDBModel.FK_Rel_Discounts_Sizes_Discounts" FromRole="Discounts" ToRole="Rel_Discounts_Sizes" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="imgFile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LinkAddres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegisterDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="title_En" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="title_Ru" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="title_Ch" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Log_LoginAttemps">
+          <Key>
+            <PropertyRef Name="LoginLogID" />
+          </Key>
+          <Property Name="LoginLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VisitDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IP" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Browser" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="OS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="RefrallPage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsSuccess" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Log_ProductExcells">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="excelFilename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubmitDate" Type="DateTime" Precision="3" />
+          <Property Name="SubmitIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fk_UserIDSubmited" Type="Guid" />
+          <NavigationProperty Name="Users" Relationship="MashadCarpetDBModel.FK_Log_ProductExcells_Users" FromRole="Log_ProductExcells" ToRole="Users" />
+          <Property Name="IsSuccess" Type="Boolean" />
+          <Property Name="ErrorMsg" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NewsLetters">
+          <Key>
+            <PropertyRef Name="NewsLetterID" />
+          </Key>
+          <Property Name="NewsLetterID" Type="Guid" Nullable="false" />
+          <Property Name="NewsLetterEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubmitDate" Type="DateTime" Precision="3" />
+          <Property Name="SubmitIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="IsValid" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="OrderDetailID" />
+          </Key>
+          <Property Name="OrderDetailID" Type="Guid" Nullable="false" />
+          <Property Name="fk_OrderID" Type="Guid" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="fk_ProductColorSizeID" Type="Guid" />
+          <NavigationProperty Name="ProductColorSizes" Relationship="MashadCarpetDBModel.FK_OrderDetails_ProductColorSizes" FromRole="OrderDetails" ToRole="ProductColorSizes" />
+          <NavigationProperty Name="Orders" Relationship="MashadCarpetDBModel.FK_OrderDetails_Orders" FromRole="OrderDetails" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="OrderStatusID" />
+          </Key>
+          <Property Name="OrderStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderStatusTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="EN_OrderStatus" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Rus_OrderStatus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="China_OrderStatus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="MashadCarpetDBModel.FK_Orders_OrderStatus" FromRole="OrderStatus" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="PaymentLogs">
+          <Key>
+            <PropertyRef Name="PaymentLogID" />
+          </Key>
+          <Property Name="PaymentLogID" Type="Guid" Nullable="false" />
+          <Property Name="fk_OrderID" Type="Guid" />
+          <Property Name="RefID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SaleReferenceId" Type="Int64" />
+          <Property Name="ResCode_Request" Type="Int32" />
+          <Property Name="ResCode_Payment" Type="Int32" />
+          <Property Name="ResCode_Verify" Type="Int32" />
+          <Property Name="ResCode_Settle" Type="Int32" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsSuccess" Type="Boolean" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="PaymentIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Orders" Relationship="MashadCarpetDBModel.FK_PaymentLogs_Orders" FromRole="PaymentLogs" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="PaymentUniqeCodes">
+          <Key>
+            <PropertyRef Name="PayementUniqeCodeID" />
+          </Key>
+          <Property Name="PayementUniqeCodeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_OrderID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="MashadCarpetDBModel.FK_PaymentUniqeCodes_Orders" FromRole="PaymentUniqeCodes" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Product_Excel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="Code" Type="Int32" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="Color" Type="Int32" />
+          <Property Name="Cost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductColors">
+          <Key>
+            <PropertyRef Name="ProductColorID" />
+          </Key>
+          <Property Name="ProductColorID" Type="Guid" Nullable="false" />
+          <Property Name="fk_ProductID" Type="Guid" Nullable="false" />
+          <Property Name="fk_ColorID" Type="Int32" Nullable="false" />
+          <Property Name="ProductImage" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="Priority" Type="Int32" />
+          <NavigationProperty Name="Colors" Relationship="MashadCarpetDBModel.FK_ProductColors_Colors" FromRole="ProductColors" ToRole="Colors" />
+          <NavigationProperty Name="Products" Relationship="MashadCarpetDBModel.FK_ProductColors_Products" FromRole="ProductColors" ToRole="Products" />
+          <NavigationProperty Name="ProductColorSizes" Relationship="MashadCarpetDBModel.FK_ProductColorSizes_ProductColors" FromRole="ProductColors" ToRole="ProductColorSizes" />
+        </EntityType>
+        <EntityType Name="ProductColorSizes">
+          <Key>
+            <PropertyRef Name="ProductColorSizeID" />
+          </Key>
+          <Property Name="ProductColorSizeID" Type="Guid" Nullable="false" />
+          <Property Name="fk_ProductColorID" Type="Guid" Nullable="false" />
+          <Property Name="fk_SizeID" Type="Int32" Nullable="false" />
+          <Property Name="ProductPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Stock" Type="Int32" />
+          <Property Name="IsAvailable" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OrderDetails" Relationship="MashadCarpetDBModel.FK_OrderDetails_ProductColorSizes" FromRole="ProductColorSizes" ToRole="OrderDetails" />
+          <NavigationProperty Name="ProductColors" Relationship="MashadCarpetDBModel.FK_ProductColorSizes_ProductColors" FromRole="ProductColorSizes" ToRole="ProductColors" />
+          <NavigationProperty Name="SIzes" Relationship="MashadCarpetDBModel.FK_ProductColorSizes_SIzes" FromRole="ProductColorSizes" ToRole="SIzes" />
+        </EntityType>
+        <EntityType Name="ProductGroup">
+          <Key>
+            <PropertyRef Name="ProductGroupID" />
+          </Key>
+          <Property Name="ProductGroupID" Type="Guid" Nullable="false" />
+          <Property Name="ProductGroupTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EN_ProductGroupTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ProductGroupName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ProductGroupImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductGroupDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EN_ProductGroupDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fk_ProductGroupID" Type="Guid" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="ProductGroupTitle2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EN_ProductGroupTitle2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="HomeTitleColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HomeTitleColor2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rus_ProductGroupTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="China_ProductGroupTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Rus_ProductGroupDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="China_ProductGroupDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rus_ProductGroupTitle2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="China_ProductGroupTitle2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="imgSliderImage" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Priority" Type="Int32" />
+          <NavigationProperty Name="ProductGroup1" Relationship="MashadCarpetDBModel.FK_ProductGroup_ProductGroup" FromRole="ProductGroup" ToRole="ProductGroup1" />
+          <NavigationProperty Name="ProductGroup2" Relationship="MashadCarpetDBModel.FK_ProductGroup_ProductGroup" FromRole="ProductGroup1" ToRole="ProductGroup" />
+          <NavigationProperty Name="Products" Relationship="MashadCarpetDBModel.FK_Products_ProductGroup" FromRole="ProductGroup" ToRole="Products" />
+          <Property Name="IsAlienCulture" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Guid" Nullable="false" />
+          <Property Name="ProductTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EN_ProductTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ProductName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fk_ProductGroupID" Type="Guid" />
+          <Property Name="DesignNo" Type="Int32" />
+          <Property Name="Frame" Type="Int32" />
+          <Property Name="Collection" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PileType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reeds" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shots" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Points" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Knots" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EN_Collection" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EN_PileType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="IsEspecial" Type="Boolean" />
+          <Property Name="submitDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="IsMostSell" Type="Boolean" />
+          <Property Name="Rus_ProductTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="China_ProductTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Rus_Collection" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="China_Collection" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Rus_PileType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="China_PileType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ThumbImage1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ThumbImage2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductUniqeCode" Type="Int32" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="ProDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ProductColors" Relationship="MashadCarpetDBModel.FK_ProductColors_Products" FromRole="Products" ToRole="ProductColors" />
+          <NavigationProperty Name="ProductGroup" Relationship="MashadCarpetDBModel.FK_Products_ProductGroup" FromRole="Products" ToRole="ProductGroup" />
+          <Property Name="IsAlienCulture" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Province">
+          <Key>
+            <PropertyRef Name="ProvinceID" />
+          </Key>
+          <Property Name="ProvinceID" Type="Int32" Nullable="false" />
+          <Property Name="ProvinceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EN_ProvinceName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Rus_ProvinceName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="China_ProvinceName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="City" Relationship="MashadCarpetDBModel.FK_City_Province" FromRole="Province" ToRole="City" />
+          <NavigationProperty Name="Users" Relationship="MashadCarpetDBModel.FK_Users_Province" FromRole="Province" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Rel_Discounts_Sizes">
+          <Key>
+            <PropertyRef Name="Rel_Discount_SizesID" />
+          </Key>
+          <Property Name="Rel_Discount_SizesID" Type="Guid" Nullable="false" />
+          <Property Name="fk_DiscountID" Type="Guid" Nullable="false" />
+          <Property Name="fk_SizeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Discounts" Relationship="MashadCarpetDBModel.FK_Rel_Discounts_Sizes_Discounts" FromRole="Rel_Discounts_Sizes" ToRole="Discounts" />
+          <NavigationProperty Name="SIzes" Relationship="MashadCarpetDBModel.FK_Rel_Discounts_Sizes_SIzes" FromRole="Rel_Discounts_Sizes" ToRole="SIzes" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="RoleTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Users" Relationship="MashadCarpetDBModel.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="SIzes">
+          <Key>
+            <PropertyRef Name="SizeID" />
+          </Key>
+          <Property Name="SizeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SizeTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ProductColorSizes" Relationship="MashadCarpetDBModel.FK_ProductColorSizes_SIzes" FromRole="SIzes" ToRole="ProductColorSizes" />
+          <NavigationProperty Name="Rel_Discounts_Sizes" Relationship="MashadCarpetDBModel.FK_Rel_Discounts_Sizes_SIzes" FromRole="SIzes" ToRole="Rel_Discounts_Sizes" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="SliderID" />
+          </Key>
+          <Property Name="SliderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SliderImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SliderTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SliderTexts" Relationship="MashadCarpetDBModel.FK_SliderTexts_Slider" FromRole="Slider" ToRole="SliderTexts" />
+        </EntityType>
+        <EntityType Name="SliderTexts">
+          <Key>
+            <PropertyRef Name="SliderTextID" />
+          </Key>
+          <Property Name="SliderTextID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_SliderID" Type="Int32" Nullable="false" />
+          <Property Name="datax" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="datay" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="speed" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="start" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsLink" Type="Boolean" Nullable="false" />
+          <Property Name="LinkAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InAndOutClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="textColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EN_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Rus_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="China_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fontsize" Type="Int32" />
+          <NavigationProperty Name="Slider" Relationship="MashadCarpetDBModel.FK_SliderTexts_Slider" FromRole="SliderTexts" ToRole="Slider" />
+        </EntityType>
+        <EntityType Name="Stores">
+          <Key>
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="StoreID" Type="Guid" Nullable="false" />
+          <Property Name="StoreName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="StorePhone" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="StoreAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StoreCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="IsStore" Type="Boolean" />
+          <Property Name="Prov" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StoreDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Texts">
+          <Key>
+            <PropertyRef Name="TextID" />
+          </Key>
+          <Property Name="TextID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TextTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EN_TextTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TextDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EN_TextDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TextImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="GroupID" Type="Int32" />
+          <Property Name="TextName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Rus_TextTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="China_TextTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rus_TextDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="China_TextDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TicketResponse">
+          <Key>
+            <PropertyRef Name="TicketResponseID" />
+          </Key>
+          <Property Name="TicketResponseID" Type="Guid" Nullable="false" />
+          <Property Name="fk_TicketID" Type="Guid" />
+          <Property Name="ResponseText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResponseDate" Type="DateTime" Precision="3" />
+          <Property Name="fk_UserID" Type="Guid" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Tickets" Relationship="MashadCarpetDBModel.FK_TicketResponse_Tickets" FromRole="TicketResponse" ToRole="Tickets" />
+          <NavigationProperty Name="Users" Relationship="MashadCarpetDBModel.FK_TicketResponse_Users" FromRole="TicketResponse" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Tickets">
+          <Key>
+            <PropertyRef Name="TicketID" />
+          </Key>
+          <Property Name="TicketID" Type="Guid" Nullable="false" />
+          <Property Name="TicketSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="fk_UserID" Type="Guid" />
+          <Property Name="TicketDate" Type="DateTime" Precision="3" />
+          <Property Name="IsValid" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="TicketMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TicketResponse" Relationship="MashadCarpetDBModel.FK_TicketResponse_Tickets" FromRole="Tickets" ToRole="TicketResponse" />
+          <NavigationProperty Name="Users" Relationship="MashadCarpetDBModel.FK_Tickets_Users" FromRole="Tickets" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fk_RoleID" Type="Int32" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="RegisterDate" Type="DateTime" Precision="3" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegisterIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ProvinceID" Type="Int32" />
+          <Property Name="CityID" Type="Int32" />
+          <NavigationProperty Name="City" Relationship="MashadCarpetDBModel.FK_Users_City" FromRole="Users" ToRole="City" />
+          <NavigationProperty Name="Discounts" Relationship="MashadCarpetDBModel.FK_Discounts_Discounts" FromRole="Users" ToRole="Discounts" />
+          <NavigationProperty Name="Log_ProductExcells" Relationship="MashadCarpetDBModel.FK_Log_ProductExcells_Users" FromRole="Users" ToRole="Log_ProductExcells" />
+          <NavigationProperty Name="Province" Relationship="MashadCarpetDBModel.FK_Users_Province" FromRole="Users" ToRole="Province" />
+          <NavigationProperty Name="Roles" Relationship="MashadCarpetDBModel.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+          <NavigationProperty Name="TicketResponse" Relationship="MashadCarpetDBModel.FK_TicketResponse_Users" FromRole="Users" ToRole="TicketResponse" />
+          <NavigationProperty Name="Tickets" Relationship="MashadCarpetDBModel.FK_Tickets_Users" FromRole="Users" ToRole="Tickets" />
+          <NavigationProperty Name="Orders" Relationship="MashadCarpetDBModel.FK_Orders_Users" FromRole="Users" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="VisitCounter">
+          <Key>
+            <PropertyRef Name="VisitID" />
+          </Key>
+          <Property Name="VisitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Browser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RefrallPage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VisitDate" Type="DateTime" Precision="3" />
+          <Property Name="TotalVisit" Type="Int32" />
+          <Property Name="VisitCount" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_Blogs_BlogGroups">
+          <End Type="MashadCarpetDBModel.BlogGroups" Role="BlogGroups" Multiplicity="0..1" />
+          <End Type="MashadCarpetDBModel.Blogs" Role="Blogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogGroups">
+              <PropertyRef Name="BlogGroupID" />
+            </Principal>
+            <Dependent Role="Blogs">
+              <PropertyRef Name="fk_BlogGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_Province">
+          <End Type="MashadCarpetDBModel.Province" Role="Province" Multiplicity="1" />
+          <End Type="MashadCarpetDBModel.City" Role="City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_City">
+          <End Type="MashadCarpetDBModel.City" Role="City" Multiplicity="0..1" />
+          <End Type="MashadCarpetDBModel.Users" Role="Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductColors_Colors">
+          <End Type="MashadCarpetDBModel.Colors" Role="Colors" Multiplicity="1" />
+          <End Type="MashadCarpetDBModel.ProductColors" Role="ProductColors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colors">
+              <PropertyRef Name="ColorID" />
+            </Principal>
+            <Dependent Role="ProductColors">
+              <PropertyRef Name="fk_ColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Discounts_Discounts">
+          <End Type="MashadCarpetDBModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="MashadCarpetDBModel.Discounts" Role="Discounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Discounts">
+              <PropertyRef Name="fk_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rel_Discounts_Sizes_Discounts">
+          <End Type="MashadCarpetDBModel.Discounts" Role="Discounts" Multiplicity="1" />
+          <End Type="MashadCarpetDBModel.Rel_Discounts_Sizes" Role="Rel_Discounts_Sizes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discounts">
+              <PropertyRef Name="DiscountID" />
+            </Principal>
+            <Dependent Role="Rel_Discounts_Sizes">
+              <PropertyRef Name="fk_DiscountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Log_ProductExcells_Users">
+          <End Type="MashadCarpetDBModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="MashadCarpetDBModel.Log_ProductExcells" Role="Log_ProductExcells" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Log_ProductExcells">
+              <PropertyRef Name="fk_UserIDSubmited" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetails_ProductColorSizes">
+          <End Type="MashadCarpetDBModel.ProductColorSizes" Role="ProductColorSizes" Multiplicity="0..1" />
+          <End Type="MashadCarpetDBModel.OrderDetails" Role="OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductColorSizes">
+              <PropertyRef Name="ProductColorSizeID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="fk_ProductColorSizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductColors_Products">
+          <End Type="MashadCarpetDBModel.Products" Role="Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MashadCarpetDBModel.ProductColors" Role="ProductColors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductColors">
+              <PropertyRef Name="fk_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductColorSizes_ProductColors">
+          <End Type="MashadCarpetDBModel.ProductColors" Role="ProductColors" Multiplicity="1" />
+          <End Type="MashadCarpetDBModel.ProductColorSizes" Role="ProductColorSizes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductColors">
+              <PropertyRef Name="ProductColorID" />
+            </Principal>
+            <Dependent Role="ProductColorSizes">
+              <PropertyRef Name="fk_ProductColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductColorSizes_SIzes">
+          <End Type="MashadCarpetDBModel.SIzes" Role="SIzes" Multiplicity="1" />
+          <End Type="MashadCarpetDBModel.ProductColorSizes" Role="ProductColorSizes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIzes">
+              <PropertyRef Name="SizeID" />
+            </Principal>
+            <Dependent Role="ProductColorSizes">
+              <PropertyRef Name="fk_SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductGroup_ProductGroup">
+          <End Type="MashadCarpetDBModel.ProductGroup" Role="ProductGroup" Multiplicity="0..1" />
+          <End Type="MashadCarpetDBModel.ProductGroup" Role="ProductGroup1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductGroup">
+              <PropertyRef Name="ProductGroupID" />
+            </Principal>
+            <Dependent Role="ProductGroup1">
+              <PropertyRef Name="fk_ProductGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_ProductGroup">
+          <End Type="MashadCarpetDBModel.ProductGroup" Role="ProductGroup" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MashadCarpetDBModel.Products" Role="Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductGroup">
+              <PropertyRef Name="ProductGroupID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="fk_ProductGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Province">
+          <End Type="MashadCarpetDBModel.Province" Role="Province" Multiplicity="0..1" />
+          <End Type="MashadCarpetDBModel.Users" Role="Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rel_Discounts_Sizes_SIzes">
+          <End Type="MashadCarpetDBModel.SIzes" Role="SIzes" Multiplicity="1" />
+          <End Type="MashadCarpetDBModel.Rel_Discounts_Sizes" Role="Rel_Discounts_Sizes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIzes">
+              <PropertyRef Name="SizeID" />
+            </Principal>
+            <Dependent Role="Rel_Discounts_Sizes">
+              <PropertyRef Name="fk_SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Roles">
+          <End Type="MashadCarpetDBModel.Roles" Role="Roles" Multiplicity="0..1" />
+          <End Type="MashadCarpetDBModel.Users" Role="Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="fk_RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SliderTexts_Slider">
+          <End Type="MashadCarpetDBModel.Slider" Role="Slider" Multiplicity="1" />
+          <End Type="MashadCarpetDBModel.SliderTexts" Role="SliderTexts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Slider">
+              <PropertyRef Name="SliderID" />
+            </Principal>
+            <Dependent Role="SliderTexts">
+              <PropertyRef Name="fk_SliderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketResponse_Tickets">
+          <End Type="MashadCarpetDBModel.Tickets" Role="Tickets" Multiplicity="0..1" />
+          <End Type="MashadCarpetDBModel.TicketResponse" Role="TicketResponse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tickets">
+              <PropertyRef Name="TicketID" />
+            </Principal>
+            <Dependent Role="TicketResponse">
+              <PropertyRef Name="fk_TicketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketResponse_Users">
+          <End Type="MashadCarpetDBModel.Users" Role="Users" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MashadCarpetDBModel.TicketResponse" Role="TicketResponse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TicketResponse">
+              <PropertyRef Name="fk_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tickets_Users">
+          <End Type="MashadCarpetDBModel.Users" Role="Users" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MashadCarpetDBModel.Tickets" Role="Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="fk_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Guid" Nullable="false" />
+          <Property Name="fk_UserID" Type="Guid" />
+          <Property Name="SubmitDate" Type="DateTime" Precision="3" />
+          <Property Name="IsFinalized" Type="Boolean" />
+          <Property Name="IsPaid" Type="Boolean" />
+          <Property Name="RecipientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RecipientPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RecipientAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentWay" Type="Int32" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <Property Name="CustomerOrderID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fk_OrderStatusID" Type="Int32" />
+          <Property Name="OrderDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FinalPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="OrderShowID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsNewOrder" Type="Boolean" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OrderDetails" Relationship="MashadCarpetDBModel.FK_OrderDetails_Orders" FromRole="Orders" ToRole="OrderDetails" />
+          <NavigationProperty Name="OrderStatus" Relationship="MashadCarpetDBModel.FK_Orders_OrderStatus" FromRole="Orders" ToRole="OrderStatus" />
+          <NavigationProperty Name="Users" Relationship="MashadCarpetDBModel.FK_Orders_Users" FromRole="Orders" ToRole="Users" />
+          <NavigationProperty Name="PaymentLogs" Relationship="MashadCarpetDBModel.FK_PaymentLogs_Orders" FromRole="Orders" ToRole="PaymentLogs" />
+          <NavigationProperty Name="PaymentUniqeCodes" Relationship="MashadCarpetDBModel.FK_PaymentUniqeCodes_Orders" FromRole="Orders" ToRole="PaymentUniqeCodes" />
+        </EntityType>
+        <Association Name="FK_OrderDetails_Orders">
+          <End Type="MashadCarpetDBModel.Orders" Role="Orders" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MashadCarpetDBModel.OrderDetails" Role="OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="fk_OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_OrderStatus">
+          <End Type="MashadCarpetDBModel.OrderStatus" Role="OrderStatus" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MashadCarpetDBModel.Orders" Role="Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="OrderStatusID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="fk_OrderStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Users">
+          <End Type="MashadCarpetDBModel.Users" Role="Users" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MashadCarpetDBModel.Orders" Role="Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="fk_UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentLogs_Orders">
+          <End Type="MashadCarpetDBModel.Orders" Role="Orders" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MashadCarpetDBModel.PaymentLogs" Role="PaymentLogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="PaymentLogs">
+              <PropertyRef Name="fk_OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentUniqeCodes_Orders">
+          <End Type="MashadCarpetDBModel.Orders" Role="Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MashadCarpetDBModel.PaymentUniqeCodes" Role="PaymentUniqeCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="PaymentUniqeCodes">
+              <PropertyRef Name="fk_OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MashadCarpetDBModelStoreContainer" CdmEntityContainer="MashadCarpetEntities">
+          <EntitySetMapping Name="AgentReq">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.AgentReq">
+              <MappingFragment StoreEntitySet="AgentReq">
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="IsMale" ColumnName="IsMale" />
+                <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlogGroups">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.BlogGroups">
+              <MappingFragment StoreEntitySet="BlogGroups">
+                <ScalarProperty Name="China_BlogGroupTitle" ColumnName="China_BlogGroupTitle" />
+                <ScalarProperty Name="Rus_BlogGroupTitle" ColumnName="Rus_BlogGroupTitle" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="BlogGroupName" ColumnName="BlogGroupName" />
+                <ScalarProperty Name="EN_BlogGroupTitle" ColumnName="EN_BlogGroupTitle" />
+                <ScalarProperty Name="BlogGroupTitle" ColumnName="BlogGroupTitle" />
+                <ScalarProperty Name="BlogGroupID" ColumnName="BlogGroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blogs">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Blogs">
+              <MappingFragment StoreEntitySet="Blogs">
+                <ScalarProperty Name="China_BlogSummery" ColumnName="China_BlogSummery" />
+                <ScalarProperty Name="Rus_BlogSummery" ColumnName="Rus_BlogSummery" />
+                <ScalarProperty Name="EN_BlogSummery" ColumnName="EN_BlogSummery" />
+                <ScalarProperty Name="BlogSummery" ColumnName="BlogSummery" />
+                <ScalarProperty Name="China_BlogText" ColumnName="China_BlogText" />
+                <ScalarProperty Name="Rus_BlogText" ColumnName="Rus_BlogText" />
+                <ScalarProperty Name="China_BlogTitle" ColumnName="China_BlogTitle" />
+                <ScalarProperty Name="Rus_BlogTitle" ColumnName="Rus_BlogTitle" />
+                <ScalarProperty Name="VisitCounts" ColumnName="VisitCounts" />
+                <ScalarProperty Name="fk_UserID" ColumnName="fk_UserID" />
+                <ScalarProperty Name="fk_BlogGroupID" ColumnName="fk_BlogGroupID" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="BlogImage" ColumnName="BlogImage" />
+                <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+                <ScalarProperty Name="EN_BlogText" ColumnName="EN_BlogText" />
+                <ScalarProperty Name="BlogText" ColumnName="BlogText" />
+                <ScalarProperty Name="BlogName" ColumnName="BlogName" />
+                <ScalarProperty Name="EN_BlogTitle" ColumnName="EN_BlogTitle" />
+                <ScalarProperty Name="BlogTitle" ColumnName="BlogTitle" />
+                <ScalarProperty Name="BlogID" ColumnName="BlogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="China_CityName" ColumnName="China_CityName" />
+                <ScalarProperty Name="Rus_CityName" ColumnName="Rus_CityName" />
+                <ScalarProperty Name="EN_CityName" ColumnName="EN_CityName" />
+                <ScalarProperty Name="Center" ColumnName="Center" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colors">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Colors">
+              <MappingFragment StoreEntitySet="Colors">
+                <ScalarProperty Name="China_ColorTitle" ColumnName="China_ColorTitle" />
+                <ScalarProperty Name="Rus_ColorTitle" ColumnName="Rus_ColorTitle" />
+                <ScalarProperty Name="ColorNo" ColumnName="ColorNo" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="ColorEN_Title" ColumnName="ColorEN_Title" />
+                <ScalarProperty Name="ColorTitle" ColumnName="ColorTitle" />
+                <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+                <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactUSForm">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.ContactUSForm">
+              <MappingFragment StoreEntitySet="ContactUSForm">
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="ContactusMsg" ColumnName="ContactusMsg" />
+                <ScalarProperty Name="ContactusEmail" ColumnName="ContactusEmail" />
+                <ScalarProperty Name="ContactusName" ColumnName="ContactusName" />
+                <ScalarProperty Name="ContactusID" ColumnName="ContactusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Discounts">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Discounts">
+              <MappingFragment StoreEntitySet="Discounts">
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DiscountPercent" ColumnName="DiscountPercent" />
+                <ScalarProperty Name="fk_UserID" ColumnName="fk_UserID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="DiscountID" ColumnName="DiscountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Links">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Links">
+              <MappingFragment StoreEntitySet="Links">
+                <ScalarProperty Name="title_Ch" ColumnName="title_Ch" />
+                <ScalarProperty Name="title_Ru" ColumnName="title_Ru" />
+                <ScalarProperty Name="title_En" ColumnName="title_En" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+                <ScalarProperty Name="LinkAddres" ColumnName="LinkAddres" />
+                <ScalarProperty Name="imgFile" ColumnName="imgFile" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_LoginAttemps">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Log_LoginAttemps">
+              <MappingFragment StoreEntitySet="Log_LoginAttemps">
+                <ScalarProperty Name="IsSuccess" ColumnName="IsSuccess" />
+                <ScalarProperty Name="RefrallPage" ColumnName="RefrallPage" />
+                <ScalarProperty Name="OS" ColumnName="OS" />
+                <ScalarProperty Name="Browser" ColumnName="Browser" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="VisitDate" ColumnName="VisitDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="LoginLogID" ColumnName="LoginLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_ProductExcells">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Log_ProductExcells">
+              <MappingFragment StoreEntitySet="Log_ProductExcells">
+                <ScalarProperty Name="ErrorMsg" ColumnName="ErrorMsg" />
+                <ScalarProperty Name="IsSuccess" ColumnName="IsSuccess" />
+                <ScalarProperty Name="fk_UserIDSubmited" ColumnName="fk_UserIDSubmited" />
+                <ScalarProperty Name="SubmitIP" ColumnName="SubmitIP" />
+                <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+                <ScalarProperty Name="excelFilename" ColumnName="excelFilename" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewsLetters">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.NewsLetters">
+              <MappingFragment StoreEntitySet="NewsLetters">
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="SubmitIP" ColumnName="SubmitIP" />
+                <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+                <ScalarProperty Name="NewsLetterEmail" ColumnName="NewsLetterEmail" />
+                <ScalarProperty Name="NewsLetterID" ColumnName="NewsLetterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.OrderDetails">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="fk_ProductColorSizeID" ColumnName="fk_ProductColorSizeID" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="fk_OrderID" ColumnName="fk_OrderID" />
+                <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderStatus">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.OrderStatus">
+              <MappingFragment StoreEntitySet="OrderStatus">
+                <ScalarProperty Name="China_OrderStatus" ColumnName="China_OrderStatus" />
+                <ScalarProperty Name="Rus_OrderStatus" ColumnName="Rus_OrderStatus" />
+                <ScalarProperty Name="EN_OrderStatus" ColumnName="EN_OrderStatus" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="OrderStatusTitle" ColumnName="OrderStatusTitle" />
+                <ScalarProperty Name="OrderStatusID" ColumnName="OrderStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentLogs">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.PaymentLogs">
+              <MappingFragment StoreEntitySet="PaymentLogs">
+                <ScalarProperty Name="PaymentIP" ColumnName="PaymentIP" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="IsSuccess" ColumnName="IsSuccess" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="ResCode_Settle" ColumnName="ResCode_Settle" />
+                <ScalarProperty Name="ResCode_Verify" ColumnName="ResCode_Verify" />
+                <ScalarProperty Name="ResCode_Payment" ColumnName="ResCode_Payment" />
+                <ScalarProperty Name="ResCode_Request" ColumnName="ResCode_Request" />
+                <ScalarProperty Name="SaleReferenceId" ColumnName="SaleReferenceId" />
+                <ScalarProperty Name="RefID" ColumnName="RefID" />
+                <ScalarProperty Name="fk_OrderID" ColumnName="fk_OrderID" />
+                <ScalarProperty Name="PaymentLogID" ColumnName="PaymentLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentUniqeCodes">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.PaymentUniqeCodes">
+              <MappingFragment StoreEntitySet="PaymentUniqeCodes">
+                <ScalarProperty Name="fk_OrderID" ColumnName="fk_OrderID" />
+                <ScalarProperty Name="PayementUniqeCodeID" ColumnName="PayementUniqeCodeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_Excel">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Product_Excel">
+              <MappingFragment StoreEntitySet="Product_Excel">
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductColors">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.ProductColors">
+              <MappingFragment StoreEntitySet="ProductColors">
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="fk_ColorID" ColumnName="fk_ColorID" />
+                <ScalarProperty Name="fk_ProductID" ColumnName="fk_ProductID" />
+                <ScalarProperty Name="ProductColorID" ColumnName="ProductColorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductColorSizes">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.ProductColorSizes">
+              <MappingFragment StoreEntitySet="ProductColorSizes">
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="fk_SizeID" ColumnName="fk_SizeID" />
+                <ScalarProperty Name="fk_ProductColorID" ColumnName="fk_ProductColorID" />
+                <ScalarProperty Name="ProductColorSizeID" ColumnName="ProductColorSizeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductGroup">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.ProductGroup">
+              <MappingFragment StoreEntitySet="ProductGroup">
+                <ScalarProperty Name="IsAlienCulture" ColumnName="IsAlienCulture" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="imgSliderImage" ColumnName="imgSliderImage" />
+                <ScalarProperty Name="China_ProductGroupTitle2" ColumnName="China_ProductGroupTitle2" />
+                <ScalarProperty Name="Rus_ProductGroupTitle2" ColumnName="Rus_ProductGroupTitle2" />
+                <ScalarProperty Name="China_ProductGroupDesc" ColumnName="China_ProductGroupDesc" />
+                <ScalarProperty Name="Rus_ProductGroupDesc" ColumnName="Rus_ProductGroupDesc" />
+                <ScalarProperty Name="China_ProductGroupTitle" ColumnName="China_ProductGroupTitle" />
+                <ScalarProperty Name="Rus_ProductGroupTitle" ColumnName="Rus_ProductGroupTitle" />
+                <ScalarProperty Name="HomeTitleColor2" ColumnName="HomeTitleColor2" />
+                <ScalarProperty Name="HomeTitleColor" ColumnName="HomeTitleColor" />
+                <ScalarProperty Name="EN_ProductGroupTitle2" ColumnName="EN_ProductGroupTitle2" />
+                <ScalarProperty Name="ProductGroupTitle2" ColumnName="ProductGroupTitle2" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="fk_ProductGroupID" ColumnName="fk_ProductGroupID" />
+                <ScalarProperty Name="EN_ProductGroupDesc" ColumnName="EN_ProductGroupDesc" />
+                <ScalarProperty Name="ProductGroupDesc" ColumnName="ProductGroupDesc" />
+                <ScalarProperty Name="ProductGroupImage" ColumnName="ProductGroupImage" />
+                <ScalarProperty Name="ProductGroupName" ColumnName="ProductGroupName" />
+                <ScalarProperty Name="EN_ProductGroupTitle" ColumnName="EN_ProductGroupTitle" />
+                <ScalarProperty Name="ProductGroupTitle" ColumnName="ProductGroupTitle" />
+                <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsAlienCulture" ColumnName="IsAlienCulture" />
+                <ScalarProperty Name="ProDesc" ColumnName="ProDesc" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="ProductUniqeCode" ColumnName="ProductUniqeCode" />
+                <ScalarProperty Name="ThumbImage2" ColumnName="ThumbImage2" />
+                <ScalarProperty Name="ThumbImage1" ColumnName="ThumbImage1" />
+                <ScalarProperty Name="China_PileType" ColumnName="China_PileType" />
+                <ScalarProperty Name="Rus_PileType" ColumnName="Rus_PileType" />
+                <ScalarProperty Name="China_Collection" ColumnName="China_Collection" />
+                <ScalarProperty Name="Rus_Collection" ColumnName="Rus_Collection" />
+                <ScalarProperty Name="China_ProductTitle" ColumnName="China_ProductTitle" />
+                <ScalarProperty Name="Rus_ProductTitle" ColumnName="Rus_ProductTitle" />
+                <ScalarProperty Name="IsMostSell" ColumnName="IsMostSell" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="submitDate" ColumnName="submitDate" />
+                <ScalarProperty Name="IsEspecial" ColumnName="IsEspecial" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="EN_PileType" ColumnName="EN_PileType" />
+                <ScalarProperty Name="EN_Collection" ColumnName="EN_Collection" />
+                <ScalarProperty Name="Knots" ColumnName="Knots" />
+                <ScalarProperty Name="Points" ColumnName="Points" />
+                <ScalarProperty Name="Shots" ColumnName="Shots" />
+                <ScalarProperty Name="Reeds" ColumnName="Reeds" />
+                <ScalarProperty Name="PileType" ColumnName="PileType" />
+                <ScalarProperty Name="Collection" ColumnName="Collection" />
+                <ScalarProperty Name="Frame" ColumnName="Frame" />
+                <ScalarProperty Name="DesignNo" ColumnName="DesignNo" />
+                <ScalarProperty Name="fk_ProductGroupID" ColumnName="fk_ProductGroupID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="EN_ProductTitle" ColumnName="EN_ProductTitle" />
+                <ScalarProperty Name="ProductTitle" ColumnName="ProductTitle" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Province">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Province">
+              <MappingFragment StoreEntitySet="Province">
+                <ScalarProperty Name="China_ProvinceName" ColumnName="China_ProvinceName" />
+                <ScalarProperty Name="Rus_ProvinceName" ColumnName="Rus_ProvinceName" />
+                <ScalarProperty Name="EN_ProvinceName" ColumnName="EN_ProvinceName" />
+                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rel_Discounts_Sizes">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Rel_Discounts_Sizes">
+              <MappingFragment StoreEntitySet="Rel_Discounts_Sizes">
+                <ScalarProperty Name="fk_SizeID" ColumnName="fk_SizeID" />
+                <ScalarProperty Name="fk_DiscountID" ColumnName="fk_DiscountID" />
+                <ScalarProperty Name="Rel_Discount_SizesID" ColumnName="Rel_Discount_SizesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleTitle" ColumnName="RoleTitle" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIzes">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.SIzes">
+              <MappingFragment StoreEntitySet="SIzes">
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="SizeTitle" ColumnName="SizeTitle" />
+                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Slider">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Slider">
+              <MappingFragment StoreEntitySet="Slider">
+                <ScalarProperty Name="SliderTitle" ColumnName="SliderTitle" />
+                <ScalarProperty Name="SliderImage" ColumnName="SliderImage" />
+                <ScalarProperty Name="SliderID" ColumnName="SliderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SliderTexts">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.SliderTexts">
+              <MappingFragment StoreEntitySet="SliderTexts">
+                <ScalarProperty Name="fontsize" ColumnName="fontsize" />
+                <ScalarProperty Name="China_Text" ColumnName="China_Text" />
+                <ScalarProperty Name="Rus_Text" ColumnName="Rus_Text" />
+                <ScalarProperty Name="EN_Text" ColumnName="EN_Text" />
+                <ScalarProperty Name="textColor" ColumnName="textColor" />
+                <ScalarProperty Name="InAndOutClass" ColumnName="InAndOutClass" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="LinkAddress" ColumnName="LinkAddress" />
+                <ScalarProperty Name="IsLink" ColumnName="IsLink" />
+                <ScalarProperty Name="start" ColumnName="start" />
+                <ScalarProperty Name="speed" ColumnName="speed" />
+                <ScalarProperty Name="datay" ColumnName="datay" />
+                <ScalarProperty Name="datax" ColumnName="datax" />
+                <ScalarProperty Name="fk_SliderID" ColumnName="fk_SliderID" />
+                <ScalarProperty Name="SliderTextID" ColumnName="SliderTextID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Stores">
+              <MappingFragment StoreEntitySet="Stores">
+                <ScalarProperty Name="StoreDesc" ColumnName="StoreDesc" />
+                <ScalarProperty Name="Prov" ColumnName="Prov" />
+                <ScalarProperty Name="IsStore" ColumnName="IsStore" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="StoreCity" ColumnName="StoreCity" />
+                <ScalarProperty Name="StoreAddress" ColumnName="StoreAddress" />
+                <ScalarProperty Name="StorePhone" ColumnName="StorePhone" />
+                <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Texts">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Texts">
+              <MappingFragment StoreEntitySet="Texts">
+                <ScalarProperty Name="China_TextDescription" ColumnName="China_TextDescription" />
+                <ScalarProperty Name="Rus_TextDescription" ColumnName="Rus_TextDescription" />
+                <ScalarProperty Name="China_TextTitle" ColumnName="China_TextTitle" />
+                <ScalarProperty Name="Rus_TextTitle" ColumnName="Rus_TextTitle" />
+                <ScalarProperty Name="TextName" ColumnName="TextName" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="TextImage" ColumnName="TextImage" />
+                <ScalarProperty Name="EN_TextDescription" ColumnName="EN_TextDescription" />
+                <ScalarProperty Name="TextDescription" ColumnName="TextDescription" />
+                <ScalarProperty Name="EN_TextTitle" ColumnName="EN_TextTitle" />
+                <ScalarProperty Name="TextTitle" ColumnName="TextTitle" />
+                <ScalarProperty Name="TextID" ColumnName="TextID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TicketResponse">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.TicketResponse">
+              <MappingFragment StoreEntitySet="TicketResponse">
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="fk_UserID" ColumnName="fk_UserID" />
+                <ScalarProperty Name="ResponseDate" ColumnName="ResponseDate" />
+                <ScalarProperty Name="ResponseText" ColumnName="ResponseText" />
+                <ScalarProperty Name="fk_TicketID" ColumnName="fk_TicketID" />
+                <ScalarProperty Name="TicketResponseID" ColumnName="TicketResponseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tickets">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Tickets">
+              <MappingFragment StoreEntitySet="Tickets">
+                <ScalarProperty Name="TicketMessage" ColumnName="TicketMessage" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="TicketDate" ColumnName="TicketDate" />
+                <ScalarProperty Name="fk_UserID" ColumnName="fk_UserID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TicketSubject" ColumnName="TicketSubject" />
+                <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+                <ScalarProperty Name="RegisterIP" ColumnName="RegisterIP" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="fk_RoleID" ColumnName="fk_RoleID" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="UserFamily" ColumnName="UserFamily" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VisitCounter">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.VisitCounter">
+              <MappingFragment StoreEntitySet="VisitCounter">
+                <ScalarProperty Name="VisitCount" ColumnName="VisitCount" />
+                <ScalarProperty Name="TotalVisit" ColumnName="TotalVisit" />
+                <ScalarProperty Name="VisitDate" ColumnName="VisitDate" />
+                <ScalarProperty Name="RefrallPage" ColumnName="RefrallPage" />
+                <ScalarProperty Name="Browser" ColumnName="Browser" />
+                <ScalarProperty Name="OS" ColumnName="OS" />
+                <ScalarProperty Name="ClientIP" ColumnName="ClientIP" />
+                <ScalarProperty Name="VisitID" ColumnName="VisitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="MashadCarpetDBModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="IsNewOrder" ColumnName="IsNewOrder" />
+                <ScalarProperty Name="OrderShowID" ColumnName="OrderShowID" />
+                <ScalarProperty Name="FinalPrice" ColumnName="FinalPrice" />
+                <ScalarProperty Name="OrderDesc" ColumnName="OrderDesc" />
+                <ScalarProperty Name="fk_OrderStatusID" ColumnName="fk_OrderStatusID" />
+                <ScalarProperty Name="CustomerOrderID" ColumnName="CustomerOrderID" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="PaymentWay" ColumnName="PaymentWay" />
+                <ScalarProperty Name="RecipientAddress" ColumnName="RecipientAddress" />
+                <ScalarProperty Name="RecipientPhone" ColumnName="RecipientPhone" />
+                <ScalarProperty Name="RecipientName" ColumnName="RecipientName" />
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+                <ScalarProperty Name="IsFinalized" ColumnName="IsFinalized" />
+                <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+                <ScalarProperty Name="fk_UserID" ColumnName="fk_UserID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

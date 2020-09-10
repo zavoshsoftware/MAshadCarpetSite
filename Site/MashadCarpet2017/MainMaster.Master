@@ -1,0 +1,634 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMaster.master.cs" Inherits="MashadCarpet.MainMaster" %>
+
+<%@ Register Src="~/Controls/UCLanguage.ascx" TagPrefix="uc1" TagName="UCLanguage" %>
+<%@ Register Src="~/Controls/UCUsefullLinks.ascx" TagName="UCUsefullLinks" TagPrefix="uc2" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+
+
+    <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="author" href="/humans.txt" />
+    <asp:ContentPlaceHolder ID="cphHead" runat="server"></asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="/DefaultCss/bootstrap.min.css" />
+    <link rel="stylesheet" href="/DefaultCss/revslider2.min.css" />
+    <link rel="stylesheet" href="/DefaultCss/style.min.css" />
+    <link rel="stylesheet" href="/DefaultCss/responsive.min.css" />
+    <link href="/css/DefaultCss.min.css" rel="stylesheet" />
+    <!-- Favicon and Apple Icons -->
+    <link rel="icon" type="image/png" href="/images/icons/icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png" />
+    <!--- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')</script>
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/ZavoshStyle.min.css" rel="stylesheet" />
+    <%--<link href="/css/SliderText.css" rel="stylesheet" />--%>
+    <link href="css/MashadCarpet.css" rel="stylesheet" />
+    <link rel="icon" href="/images/favicon.png" />
+    <link href="css/ZavoshStyle.css" rel="stylesheet" />
+
+    <asp:Literal ID="StyleSheet" runat="Server" />
+    <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-73802235-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <meta name="google-site-verification" content="61nKd1IOYG93ZLzhzfZC8V5LuLQi4X_JjimWAeujCDE" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <div id="sticky-header" class="fullwidth-menu header1" data-fixed="fixed"></div>
+            <header id="header" class="fullwidth-menu header2">
+                <div id="header-top">
+                    <div class="container clearfix">
+                        <div class="left-side">
+                            <ul class="header-links">
+                                <li><a href="http://club.mashadcarpet.com" target="_blank"><i class="fa fa-user" style="color: #fff; margin-right: 10px;"></i><span>
+                                    <asp:Literal ID="lblCustomerClub" runat="server" Text="<%$Resources:Resource,CustomerClub%>"></asp:Literal></span></a></li>
+
+                                <li><a href="/corporate-social-responsibility"><i class="fa fa-users" style="color: #fff; margin-right: 10px;"></i><span>
+                                    <asp:Literal ID="lblSocialResponsibility" runat="server" Text="<%$Resources:Resource,SocialResponsibility%>"></asp:Literal></span></a></li>
+                                <li><a href="/Sales-Representatives"><i class="fa fa-shopping-cart" style="color: #fff; margin-right: 10px;"></i><span>
+                                    <asp:Literal ID="lblMarkets" runat="server" Text="<%$Resources:Resource,Markets%>"></asp:Literal></span></a></li>
+                                <asp:LoginView ID="LoginView2" runat="server">
+                                    <AnonymousTemplate>
+
+                                        <li><a href="/Register.aspx"><i class="fa fa-plus" style="color: #fff; margin-right: 10px;"></i><span>
+                                            <asp:Literal ID="lblRegister" runat="server" Text="<%$Resources:Resource,Register%>"></asp:Literal></span></a></li>
+                                        <li><a href="/login"><i class="fa fa-sign-in" style="color: #fff; margin-right: 10px;"></i><span>
+                                            <asp:Literal ID="lblLogin" runat="server" Text="<%$Resources:Resource,Login%>"></asp:Literal></span></a></li>
+                                    </AnonymousTemplate>
+                                    <RoleGroups>
+                                        <asp:RoleGroup Roles="Customer">
+                                            <ContentTemplate>
+                                                <li>
+                                                    <asp:LinkButton CausesValidation="False" ID="lbExit" OnClick="lbExit_Click" runat="server" meta:resourcekey="lbExitResource1">
+                                                        <i class="fa fa-sign-out" style="color: #fff; margin-right: 10px;"></i>
+                                                        <asp:Literal ID="lblLogout" runat="server" Text="<%$Resources:Resource,Logout%>"></asp:Literal>
+                                                    </asp:LinkButton>
+                                                </li>
+                                            </ContentTemplate>
+                                        </asp:RoleGroup>
+                                        <asp:RoleGroup Roles="Admin">
+                                            <ContentTemplate>
+                                                <li>
+                                                    <asp:LinkButton CausesValidation="False" ID="lbExit2" OnClick="lbExit_Click" runat="server" meta:resourcekey="lbExit2Resource1">
+                                                        <i class="fa fa-sign-out" style="color: #fff; margin-right: 10px;"></i>
+                                                        <asp:Literal ID="lblLogout2" runat="server" Text="<%$Resources:Resource,Logout%>"></asp:Literal>
+                                                    </asp:LinkButton>
+                                                </li>
+                                                <li><a href="/Admin"><i class="fa fa-dashboard" style="color: #fff; margin-right: 10px;"></i><span>
+                                                    <asp:Literal ID="lblAdminlogin" runat="server" Text="<%$Resources:Resource,Adminlogin%>"></asp:Literal></span></a></li>
+                                            </ContentTemplate>
+                                        </asp:RoleGroup>
+                                    </RoleGroups>
+                                    <RoleGroups>
+                                        <asp:RoleGroup Roles="Admin">
+                                            <ContentTemplate>
+                                                <li>
+                                                    <asp:LinkButton CausesValidation="false" ID="lbExit2" OnClick="lbExit_Click" runat="server">
+                                                        <i class="fa fa-sign-out" style="color: #fff; margin-right: 10px;"></i>
+                                                        <asp:Literal ID="lblLogout3" runat="server" Text="<%$Resources:Resource,Logout%>"></asp:Literal>
+                                                    </asp:LinkButton>
+                                                </li>
+                                                <li><a href="/Admin"><i class="fa fa-dashboard" style="color: #fff; margin-right: 10px;"></i><span>
+                                                    <asp:Literal ID="lblAdminlogin" runat="server" Text="<%$Resources:Resource,Adminlogin%>"></asp:Literal></span></a></li>
+
+                                            </ContentTemplate>
+                                        </asp:RoleGroup>
+                                    </RoleGroups>
+                                </asp:LoginView>
+                            </ul>
+                            <div class="user-dropdown dropdown visible-sm visible-xs">
+                                <a title="My Account" class="dropdown-toggle" data-toggle="dropdown"><span class="header-links-icon icon-account"></span><span class="user-text">
+                                    <asp:Literal ID="lblMyaccount" runat="server" Text="<%$Resources:Resource,MyAccount%>"></asp:Literal></span><span class="dropdown-arrow"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <asp:LoginView ID="LoginView3" runat="server">
+                                        <AnonymousTemplate>
+                                            <li><a href="#"><span class="header-links-icon icon-account"></span><span>
+                                                <asp:Literal ID="lblMyaccount2" runat="server" Text="<%$Resources:Resource,MyAccount%>"></asp:Literal></span></a></li>
+                                            <li><a href="/Track.aspx"><span class="header-links-icon icon-checkout"></span><span>
+                                                <asp:Literal ID="lblTrackOrder" runat="server" Text="<%$Resources:Resource,TrackOrder%>"></asp:Literal></span></a></li>
+                                            <li><a href="/cart.aspx"><span class="header-links-icon icon-wishlist"></span><span>
+                                                <asp:Literal ID="lblShoppingbag" runat="server" Text="<%$Resources:Resource,shoppingbag%>"></asp:Literal></span></a></li>
+                                            <li><a href="/login.aspx"><span class="header-links-icon icon-login"></span><span>
+                                                <asp:Literal ID="lblLogin2" runat="server" Text="<%$Resources:Resource,Login%>"></asp:Literal></span></a></li>
+                                        </AnonymousTemplate>
+                                        <RoleGroups>
+                                            <asp:RoleGroup Roles="Admin">
+                                                <ContentTemplate>
+                                                    <li><a href="#"><span class="header-links-icon icon-account"></span><span>
+                                                        <asp:Literal ID="lblMyaccount2" runat="server" Text="<%$Resources:Resource,MyAccount%>"></asp:Literal></span></a></li>
+                                                    <li><a href="/Track.aspx"><span class="header-links-icon icon-checkout"></span><span>
+                                                        <asp:Literal ID="lblTrackOrder" runat="server" Text="<%$Resources:Resource,TrackOrder%>"></asp:Literal></span></a></li>
+                                                    <li><a href="/cart.aspx"><span class="header-links-icon icon-wishlist"></span><span>
+                                                        <asp:Literal ID="lblShoppingbag" runat="server" Text="<%$Resources:Resource,shoppingbag%>"></asp:Literal></span></a></li>
+                                                    <li><a href="/Admin"><span class="fa fa-dashboard"></span><span>
+                                                        <asp:Literal ID="lblLogin2" runat="server" Text="<%$Resources:Resource,Adminlogin%>"></asp:Literal></span></a></li>
+                                                    <li>
+                                                        <asp:LinkButton CausesValidation="false" ID="lbExit2" OnClick="lbExit_Click" runat="server">
+                                                            <i class="fa fa-sign-out" style="color: #fff; margin-right: 10px;"></i>
+                                                            <asp:Literal ID="lblLogout4" runat="server" Text="<%$Resources:Resource,Logout%>"></asp:Literal>
+                                                        </asp:LinkButton></li>
+                                                </ContentTemplate>
+                                            </asp:RoleGroup>
+                                        </RoleGroups>
+                                    </asp:LoginView>
+
+                                    <%--<li><a href="#"><span class="header-links-icon icon-account"></span><span>
+                                        <asp:Literal ID="ltMyaccount" runat="server" Text="<%$Resources:Resource,MyAccount%>"></asp:Literal></span></a></li>
+                                    <li><a href="/Track.aspx"><span class="header-links-icon icon-checkout"></span><span>
+                                        <asp:Literal ID="lblTrackOrder" runat="server" Text="<%$Resources:Resource,TrackOrder%>"></asp:Literal></span></a></li>
+                                    <li><a href="/cart.aspx"><span class="header-links-icon icon-wishlist"></span><span>
+                                        <asp:Literal ID="lblShoppingbag" runat="server" Text="<%$Resources:Resource,shoppingbag%>"></asp:Literal></span></a></li>
+                                    <li><a href="/login.aspx"><span class="header-links-icon icon-login"></span><span>
+                                        <asp:Literal ID="lblLogin2" runat="server" Text="<%$Resources:Resource,Login%>"></asp:Literal></span></a></li>--%>
+                                </ul>
+                            </div>
+                            <!-- End .user-dropdown -->
+                        </div>
+                        <!-- End .left-side -->
+                        <div class="right-side hidden-xs">
+                            <div class="search-container">
+                                <asp:Panel ID="pnlSearch" runat="server" DefaultButton="btnSearch" meta:resourcekey="pnlSearchResource1">
+                                    <div class="search-form">
+                                        <asp:TextBox ID="txtSearch" runat="server" CssClass="s directionRTL" placeholder="<%$Resources:Resource,SearchText%>" meta:resourcekey="txtSearchResource1"></asp:TextBox>
+                                        <a href="#" title="Close Search" class="search-close-btn"></a>
+                                        <asp:Button ID="btnSearch" runat="server" CssClass="search-submit-btn" OnClick="btnSearch_Click" meta:resourcekey="btnSearchResource1" />
+                                    </div>
+                                </asp:Panel>
+                            </div>
+                            <!-- End .search-container -->
+                            <a href="#" class="header-search-btn" title="Search">
+                                <i class="fa fa-search" style="color: #fff; margin-right: 10px;"></i>
+                                <asp:Literal ID="lblSearchBtn" runat="server" Text="<%$Resources:Resource,SearchBtn%>"></asp:Literal></a>
+                            <div class="cart-dropdown dropdown pull-right floatleftinen">
+                                <a title="Shopping Cart" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart" style="color: #fff; margin-right: 10px;"></i><span class="badge">2</span><span class="hidden-sm hidden-xs">
+                                    <asp:Literal ID="ltyourShoppingCart" runat="server" Text="<%$Resources:Resource,YourShoppingCart%>"></asp:Literal></span></a>
+                                <div class="dropdown-menu">
+                                    <div class="cart-dropdown-header" style="direction: rtl; text-align: right;">
+                                        <span class="dropdown-icon pull-right" style="direction: rtl;"></span>&nbsp;&nbsp;
+                                      
+
+                                       <asp:Literal ID="lblSubmitOrder" runat="server" Text="<%$Resources:Resource,YourShoppingCart%>"></asp:Literal>
+                                    </div>
+                                    <p class="cart-desc" style="direction: rtl; text-align: right;">
+                                        <asp:Label ID="lblCo" runat="server"></asp:Label>
+                                        <asp:Literal ID="ltSubmitOrder" runat="server" Text="<%$Resources:Resource,YourOrder%>"></asp:Literal>
+
+                                        <asp:Label ID="Label3" runat="server" CssClass="fontBRoya" meta:resourcekey="lblTotalResource1"></asp:Label>
+
+                                    </p>
+                                    <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="rptBasketItems_ItemDataBound" OnItemCommand="rptBasketItems_ItemCommand">
+                                        <ItemTemplate>
+                                            <div class="product clearfix">
+                                                <asp:LinkButton ID="lbDeleteOrder" runat="server" CssClass="delete-btn pull-left" CommandArgument='<%# Eval("OrderDetailID") %>' meta:resourcekey="lbDeleteOrderResource1"></asp:LinkButton>
+                                                <figure class="product-image-container pull-right">
+                                                    <a href='<%# String.Format("/carpet-online-shopping/{0}/{1}/?ColorID={2}", Eval("ProductGroupName"), Eval("ProductName"), Eval("ProductColorID")) %>' title="Mustard yellow ruffle dress">
+                                                        <img src='<%# Eval("ProductImage","/Uploads/Products/{0}") %>' alt="Product image" class="product-image">
+                                                    </a>
+                                                    &nbsp;&nbsp;
+                                                </figure>
+                                                <div class="product-content">
+                                                    <h3 class="product-name" style="text-align: right; padding-right: 10px;"><a href='<%# String.Format("/carpet-online-shopping/{0}/{1}/?ColorID={2}", Eval("ProductGroupName"), Eval("ProductName"), Eval("ProductColorID")) %>' title="Mustard yellow ruffle dress"><%# Eval("ProductTitle") %></a></h3>
+                                                    <div class="product-price-container" style="direction: rtl; text-align: right; padding-right: 10px;">
+                                                        <span class="product-price">
+                                                            <asp:Literal ID="lblNumber" runat="server" Text="<%$Resources:Resource,Number%>"></asp:Literal>: <%# Eval("Count") %></span><br />
+                                                        <span class="product-price">
+                                                            <asp:HiddenField ID="hfOrderDetailID" runat="server" Value='<%# Eval("OrderDetailID") %>' />
+                                                            <asp:Label ID="lblPrice" runat="server" CssClass="fontBRoya" meta:resourcekey="lblPriceResource1"></asp:Label>
+                                                        </span>
+                                                    </div>
+                                                    <!-- End .product-price-container -->
+                                                </div>
+                                                <!-- End .product-content -->
+
+                                            </div>
+                                            <!-- End .product -->
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+
+
+                                    <div class="clearfix">
+                                        <asp:Panel ID="pnlIsActiveFactor" runat="server">
+
+                                            <ul class="pull-right action-info-container">
+                                                <li>
+                                                    <asp:Literal ID="lblTotalFactor" runat="server" Text="<%$Resources:Resource,Totalfactor%>"></asp:Literal>: <span class="first-color">
+                                                        <asp:Label ID="Label4" runat="server" CssClass="fontBRoya" meta:resourcekey="lblOrderTotalResource1"></asp:Label></span></li>
+                                                <li>
+                                                    <asp:Literal ID="lblTaxTitle" runat="server" Text="<%$Resources:Resource,TaxTitle%>"></asp:Literal>: <span class="text-lowercase directionRTL">%0</span></li>
+                                                <li>
+                                                    <asp:Literal ID="Literal5" runat="server" Text="<%$Resources:Resource,Totalfactor%>"></asp:Literal>: <span class="first-color">
+                                                        <asp:Label ID="Label5" runat="server" CssClass="fontBRoya" meta:resourcekey="lblTotalPriceResource1"></asp:Label></span></li>
+                                            </ul>
+                                            <ul class="pull-left action-btn-container">
+                                                <li>
+                                                    <asp:HyperLink ID="hlPayment" runat="server" CssClass="btn btn-custom-5 paymentBtn">
+
+                                                        <asp:Literal ID="lblPayment" runat="server" Text="<%$Resources:Resource,PayMent%>"></asp:Literal>
+                                                    </asp:HyperLink></li>
+
+                                                <li><a href="/Cart.aspx" class="btn btn-custom-5" style="width: 115px; height: 30px;">
+                                                    <asp:Literal ID="lblViewCart" runat="server" Text="<%$Resources:Resource,ViewCart%>"></asp:Literal>
+                                                </a></li>
+                                            </ul>
+
+                                        </asp:Panel>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="language-dropdown dropdown floatleftinen">
+                                <uc1:UCLanguage runat="server" ID="UCLanguage" />
+                            </div>
+                            <!-- End .language-dropdown -->
+                        </div>
+                        <!-- End .right-side -->
+                    </div>
+                </div>
+                <!-- End #header-top -->
+
+            </header>
+            <!-- End #sticky-header -->
+            <header id="header" class="fullwidth-menu header1">
+                <div class="container" data-clone="sticky">
+                    <div class="row">
+                        <div class="col-sm-12 clearfix">
+                            <div class="logo-container">
+                                <div class="logo clearfix">
+                                    <a href="/default.aspx">
+                                        <asp:Image ID="imglogo" runat="server" AlternateText="فرش مشهد" />
+
+
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- End .logo-container-->
+
+                            <div class="right-side clearfix">
+                                <div class="search-container">
+                                </div>
+                                <nav id="main-nav">
+                                    <div id="responsive-nav">
+                                        <a id="responsive-btn" href="#">
+                                            <span class="responsive-btn-icon">
+                                                <span class="responsive-btn-block"></span>
+                                                <span class="responsive-btn-block"></span>
+                                                <span class="responsive-btn-block last"></span>
+                                            </span>
+                                            <%--<span class="responsive-btn-text visible-sm-inline-block visible-xs-inline-block">
+                                                        <asp:Literal ID="lblMenu" runat="server" Text="<%$Resources:Resource,MenuTitle%>"></asp:Literal></span>--%>
+                                        </a>
+                                        <!-- responsive-nav-button -->
+                                        <div id="responsive-menu-container">
+                                            <ul style="background-color: RGB(52, 56, 143);">
+                                                <li class="sx-menu"><a href="/Default.aspx" style="color: #fff;">
+                                                    <asp:Literal ID="Literal6" runat="server" Text="<%$Resources:Resource,MainPageTitle%>"></asp:Literal></a>
+
+                                                </li>
+                                                <li class="sx-menu"><a href="/carpet-online-shopping" style="color: #fff;">
+                                                    <asp:Literal ID="Literal7" runat="server" Text="<%$Resources:Resource,ProductsTitle%>"></asp:Literal></a>
+                                                </li>
+                                                <li class="sx-menu"><a href="/Blog/all?PageID=1" style="color: #fff;">
+                                                    <asp:Literal ID="Literal8" runat="server" Text="<%$Resources:Resource,NewsTitle%>"></asp:Literal></a>
+
+                                                </li>
+                                                <li class="sx-menu"><a href="/About-us" style="color: #fff;">
+                                                    <asp:Literal ID="Literal9" runat="server" Text="<%$Resources:Resource,AboutTitle%>"></asp:Literal></a>
+
+                                                </li>
+                                                <li class="sx-menu"><a href="/Contact-us" style="color: #fff;">
+                                                    <asp:Literal ID="Literal10" runat="server" Text="<%$Resources:Resource,ContactTitle%>"></asp:Literal></a>
+
+                                                </li>
+                                                <li class="sx-menu"><a href="/cart.aspx" style="color: #fff;">
+                                                    <asp:Literal ID="Literal11" runat="server" Text="سبد خرید"></asp:Literal></a>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- End #responsive-menu-container -->
+                                    </div>
+                                    <!-- End .responsive-nav -->
+
+                                    <ul class="menu clearfix">
+                                        <li><a href="/Default.aspx">
+                                            <asp:Literal ID="lblMainPageTitle" runat="server" Text="<%$Resources:Resource,MainPageTitle%>"></asp:Literal></a>
+
+                                        </li>
+                                        <li class="megamenu-container"><a href="/carpet-online-shopping">
+                                            <asp:Literal ID="lblOnlineStore" runat="server" Text="<%$Resources:Resource,OnlineStore%>"></asp:Literal></a></li>
+                                        <li
+                                            class="megamenu-container"><a href="/carpet-online-shopping">
+                                                <asp:Literal ID="lbl" runat="server" Text="<%$Resources:Resource,ProductsTitle%>"></asp:Literal></a>
+                                            <div class="megamenu" style="opacity: 0.75;">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-6 menu-banner">
+                                                            <a href="#" class=" text-left">
+
+                                                                <img src="/images/Carpet-1.png" alt="فرش مشهد" />
+                                                                <!-- End .banner-container -->
+                                                            </a>
+                                                            <!-- End .banner -->
+                                                        </div>
+                                                        <div class="col-md-6" style="padding-top: 55px;">
+                                                            <asp:Repeater ID="rptProductGroup" runat="server">
+                                                                <ItemTemplate>
+                                                                    <div class="col-md-6">
+                                                                        <a href='<%# Eval("ProductGroupName","/carpet-online-shopping/{0}") %>' class="megamenu-title"><%# Eval("ProductGroupTitle") %></a>
+
+                                                                    </div>
+                                                                </ItemTemplate>
+                                                            </asp:Repeater>
+                                                            <asp:Repeater ID="rptProductGroup2" runat="server">
+                                                                <ItemTemplate>
+                                                                    <div class="col-md-6">
+                                                                        <a href='<%# Eval("ProductGroupName","/carpet-online-shopping/{0}") %>' class="megamenu-title"><%# Eval("ProductGroupTitle") %></a>
+
+                                                                    </div>
+                                                                </ItemTemplate>
+                                                            </asp:Repeater>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End .row -->
+                                                </div>
+                                                <!-- End .container -->
+                                            </div>
+                                            <!-- End.megamenu -->
+                                        </li>
+
+                                        <li><a href="/Blog/all?PageID=1">
+                                            <asp:Literal ID="lblNewTitle" runat="server" Text="<%$Resources:Resource,NewsTitle%>"></asp:Literal></a>
+
+                                        </li>
+                                        <li><a href="/About-us">
+                                            <asp:Literal ID="Literal4" runat="server" Text="<%$Resources:Resource,AboutTitle%>"></asp:Literal></a>
+
+                                        </li>
+                                        <li><a href="/Contact-us">
+                                            <asp:Literal ID="lblContact" runat="server" Text="<%$Resources:Resource,ContactTitle%>"></asp:Literal></a>
+
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div class="right-side-wrapper">
+                                    <%--<a href="#" class="header-search-btn" title="Search"></a>--%>
+
+                                    <div class="user-dropdown dropdown pull-left">
+                                        <a title="My Account" class="dropdown-toggle" data-toggle="dropdown"><span class="dropdown-icon"></span><span class="dropdown-text">
+                                            <asp:Literal ID="ltUser" runat="server" Text="<%$Resources:Resource,UserTitle%>"></asp:Literal></span></a>
+                                        <asp:LoginView ID="LoginView1" runat="server">
+                                            <AnonymousTemplate>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="/Register.aspx">
+                                                        <asp:Literal ID="lblRegister" runat="server" Text="<%$Resources:Resource,Register%>"></asp:Literal></a></li>
+                                                    <li>
+                                                        <asp:LinkButton ID="lbLogin" runat="server" OnClick="lbLogin_Click">
+                                                            <asp:Literal ID="lblLogin" runat="server" Text="<%$Resources:Resource,Login%>"></asp:Literal>
+                                                        </asp:LinkButton>
+                                                    </li>
+                                                </ul>
+                                            </AnonymousTemplate>
+                                            <RoleGroups>
+                                                <asp:RoleGroup Roles="Customer">
+                                                    <ContentTemplate>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="/Profile.aspx">
+                                                                <asp:Literal ID="lblMyaccount2" runat="server" Text="<%$Resources:Resource,MyAccount%>"></asp:Literal></a></li>
+                                                            <li><a href="/Track.aspx">
+                                                                <asp:Literal ID="lblTrackOrder" runat="server" Text="<%$Resources:Resource,TrackOrder%>"></asp:Literal></a></li>
+                                                            <li><a href="/bill">
+                                                                <asp:Literal ID="ltOrderHistory" runat="server" Text="<%$Resources:Resource,OrderHistory%>"></asp:Literal></a></li>
+                                                            <li><a href="/Cart.aspx">
+                                                                <asp:Literal ID="lblShoppingbag" runat="server" Text="<%$Resources:Resource,shoppingbag%>"></asp:Literal></a></li>
+                                                            <li><a href="/WebForm2.aspx">
+                                                                <asp:Literal ID="lblLogout" runat="server" Text="<%$Resources:Resource,Logout%>"></asp:Literal></a></li>
+                                                        </ul>
+                                                    </ContentTemplate>
+                                                </asp:RoleGroup>
+                                            </RoleGroups>
+                                            <RoleGroups>
+                                                <asp:RoleGroup Roles="Admin">
+                                                    <ContentTemplate>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="/Profile.aspx">
+                                                                <asp:Literal ID="lblMyaccount2" runat="server" Text="<%$Resources:Resource,MyAccount%>"></asp:Literal></a></li>
+                                                            <li><a href="/Track.aspx">
+                                                                <asp:Literal ID="lblTrackOrder" runat="server" Text="<%$Resources:Resource,TrackOrder%>"></asp:Literal></a></li>
+                                                            <li><a href="/bill">
+                                                                <asp:Literal ID="ltOrderHistory" runat="server" Text="<%$Resources:Resource,OrderHistory%>"></asp:Literal></a></li>
+                                                            <li><a href="/Cart.aspx">
+                                                                <asp:Literal ID="lblShoppingbag" runat="server" Text="<%$Resources:Resource,shoppingbag%>"></asp:Literal></a></li>
+                                                            <li><a href="/WebForm2.aspx">
+                                                                <asp:Literal ID="lblLogout" runat="server" Text="<%$Resources:Resource,Logout%>"></asp:Literal></a></li>
+                                                        </ul>
+                                                    </ContentTemplate>
+                                                </asp:RoleGroup>
+                                            </RoleGroups>
+                                        </asp:LoginView>
+                                    </div>
+                                    <!-- End .user-dropdown -->
+
+                                    <div class="cart-dropdown dropdown pull-right">
+                                        <a title="سبد خرید" class="dropdown-toggle" data-toggle="dropdown"><span class="dropdown-icon"></span><span class="badge">
+                                            <asp:Label ID="lblOrderCount" runat="server" Text=""></asp:Label>
+                                        </span><span class="dropdown-text">
+                                            <asp:Literal ID="lblYourCart" runat="server" Text="<%$Resources:Resource,YourShoppingCart%>"></asp:Literal></span></a>
+                                        <div class="dropdown-menu" style="z-index: 1000;">
+
+                                            <p class="cart-desc" style="direction: rtl; text-align: right;">
+
+                                                <asp:Label ID="lblOrderCount2" runat="server" Text=""></asp:Label>
+                                                <asp:Literal ID="Literal1" runat="server" Text="<%$Resources:Resource,YourOrder%>"></asp:Literal>
+                                                <asp:Label ID="lblTotal" runat="server" Text="" CssClass="fontBRoya"></asp:Label>
+                                            </p>
+                                            <asp:Repeater ID="rptBasketItems" runat="server" OnItemDataBound="rptBasketItems_ItemDataBound" OnItemCommand="rptBasketItems_ItemCommand">
+                                                <ItemTemplate>
+                                                    <div class="product clearfix">
+                                                        <asp:LinkButton ID="lbDeleteOrder" runat="server" CssClass="delete-btn pull-left" CommandArgument='<%# Eval("OrderDetailID") %>'></asp:LinkButton>
+                                                        <figure class="product-image-container pull-right">
+                                                            <a href='<%# String.Format("/carpet-online-shopping/{0}/{1}/?ColorID={2}", Eval("ProductGroupName"), Eval("ProductName"), Eval("ProductColorID")) %>' title="Mustard yellow ruffle dress">
+
+                                                                <img src='<%# Eval("ProductImage","/Uploads/Products/{0}") %>' alt="Product image" class="product-image" />
+                                                            </a>
+                                                        </figure>
+                                                        <div class="product-content">
+                                                            <h3 class="product-name" style="text-align: right; padding-right: 10px;"><a href="#" title="Mustard yellow ruffle dress"><%# Eval("ProductTitle") %></a></h3>
+                                                            <div class="product-price-container" style="direction: rtl; text-align: right; padding-right: 10px;">
+                                                                <span class="product-price">
+                                                                    <asp:Literal ID="lblNumber" runat="server" Text="<%$Resources:Resource,Number%>"></asp:Literal>: <%# Eval("Count") %></span><br />
+                                                                <span class="product-price">
+
+                                                                    <asp:HiddenField ID="hfOrderDetailID" runat="server" Value='<%# Eval("OrderDetailID") %>' />
+                                                                    <asp:Label ID="lblPrice" runat="server" Text="" CssClass="fontBRoya"></asp:Label>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                            <div class="clearfix">
+                                                <asp:Panel ID="pnlIsActiveFactor2" runat="server">
+                                                    <ul class="pull-right action-info-container">
+                                                        <li>
+                                                            <asp:Literal ID="lblTotalfactor2" runat="server" Text="<%$Resources:Resource,Totalfactor%>"></asp:Literal>: <span class="first-color">
+                                                                <asp:Label ID="lblOrderTotal" runat="server" Text="" CssClass="fontBRoya"></asp:Label></span></li>
+                                                        <li>
+                                                            <asp:Literal ID="ltTax" runat="server" Text="<%$Resources:Resource,TaxTitle%>"></asp:Literal>: <span class="text-lowercase directionRTL">%0</span></li>
+                                                        <li>
+                                                            <asp:Literal ID="lblTotalfactor3" runat="server" Text="<%$Resources:Resource,Totalfactor%>"></asp:Literal>: <span class="first-color">
+                                                                <asp:Label ID="lblTotalPrice" runat="server" Text="" CssClass="fontBRoya"></asp:Label></span></li>
+                                                    </ul>
+                                                    <ul class="pull-left action-btn-container">
+                                                        <li>
+                                                            <asp:HyperLink ID="hlPayment2" runat="server" CssClass="btn btn-custom-5 paymentBtn">
+
+                                                                <asp:Literal ID="Literal2" runat="server" Text="<%$Resources:Resource,PayMent%>">
+
+                                                                </asp:Literal>
+                                                            </asp:HyperLink></li>
+
+                                                        <li><a href="/Cart.aspx" class="btn btn-custom-5" style="width: 115px; height: 30px;">
+                                                            <asp:Literal ID="Literal3" runat="server" Text="<%$Resources:Resource,ViewCart%>"></asp:Literal></a></li>
+                                                    </ul>
+                                                </asp:Panel>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- End #header -->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <footer id="footer" class="footer3">
+                <div id="footer-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="row">
+                                <div class="col-sm-5 widget">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.1000955784853!2d51.41528790000001!3d35.77291750000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e0689f7d18999%3A0x21ed013cd321e531!2sTehran%2C+W+Atefi+St!5e0!3m2!1sen!2sir!4v1440220941433" width="100%" height="300" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                                </div>
+                                <!-- End .col-sm-4 -->
+                                <div class="col-sm-3 widget">
+                                    <uc2:UCUsefullLinks ID="UCUsefullLinks2" runat="server" />
+                                </div>
+                                <!-- End .col-sm-4 -->
+                                <div class="col-sm-4 widget">
+                                    <h4 style="text-align: right;">
+                                        <asp:Literal ID="ltPurchaseguide" runat="server" Text="<%$Resources:Resource,Purchaseguide%>"></asp:Literal></h4>
+                                    <div class="accordion links" id="accordion" style="text-align: right;">
+
+
+                                        <asp:Repeater ID="rptBuyingManual" runat="server">
+                                            <ItemTemplate>
+                                                <div class="accordion-group panel">
+                                                    <div class="accordion-title">
+                                                        <span><%# Eval("TextTitle") %></span>
+                                                        <a class="accordion-btn" data-toggle="collapse" data-parent="#accordion" href='<%# Eval("TextName","#{0}") %>'></a>
+                                                    </div>
+                                                    <!-- End .accourdion-title -->
+
+                                                    <div class="accordion-body collapse" id='<%# Eval("TextName") %>'>
+                                                        <div class="accordion-body-wrapper">
+                                                            <p><%# Eval("TextDescription") %> </p>
+
+                                                        </div>
+                                                        <!-- End .accordion-body-wrapper -->
+                                                    </div>
+                                                    <!-- End .accordion-body -->
+                                                </div>
+                                                <!-- End .accordion-group -->
+
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 clearfix">
+                                <p class="copyright-text">
+                                    &copy; 2015 All Rights Reserved. Powered by
+                                    <a class="copy-mg" href="http://www.mygroups.co" target="_blank">
+
+                                        <img style="vertical-align: middle;" src="/images/MyMedia-Logo.png" alt="MyMedia Logo" width="59" height="19">
+                                    </a>
+                                </p>
+                                <ul class="clearfix">
+                                    <li><a href="https://t.me/MashadCarpetCo" class="" title="Facebook"><i class="fa fa-2x fa-telegram"></i></a></li>
+                                    <li><a href="https://www.instagram.com/mashadcarpet/" class="" title="Facebook"><i class="fa fa-2x fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <a href="#header" id="scroll-top" title="Go to top">Top</a>
+
+        <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/smoothscroll.min.js"></script>
+        <script src="/js/waypoints.min.js"></script>
+        <script src="/js/waypoints-sticky.min.js"></script>
+        <script src="/js/jquery.debouncedresize.min.js"></script>
+        <script src="/js/retina.min.js"></script>
+        <script src="/js/jquery.placeholder.min.js"></script>
+        <script src="/js/jquery.hoverIntent.min.js"></script>
+        <script src="/js/owl.carousel.min.js"></script>
+        <script src="/js/jquery.selectbox.min.js"></script>
+        <script src="/js/jquery.nouislider.min.js"></script>
+        <script src="/js/jflickrfeed.min.js"></script>
+        <script src="/js/jquery.bxslider.min.js"></script>
+        <script src="/js/twitter/jquery.tweet.min.js"></script>
+        <script src="/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/js/jquery.stellar.min.js"></script>
+        <script src="/js/maplabel.min.js"></script>
+        <script src="/js/main.min.js"></script>
+        <script>
+            $(function () {
+                "use strict";
+                // Slider Revolution
+                jQuery('#revslider').revolution({
+                    delay: 8000,
+                    startwidth: 1170,
+                    startheight: 600,
+                    fullWidth: "on",
+                    fullScreen: "off",
+                    hideTimerBar: "on",
+                    spinner: "spinner3",
+                });
+            });
+        </script>
+    </form>
+</body>
+</html>

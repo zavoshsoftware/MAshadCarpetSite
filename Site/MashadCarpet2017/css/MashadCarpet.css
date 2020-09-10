@@ -1,0 +1,52 @@
+﻿body {
+}
+.sx-menu {
+    padding: 15px 0 0 0;
+    border-bottom: 1px solid #000;
+    height: 25px;
+    text-align: center;
+}
+.sx-menu {
+    padding: 15px 0 0 0;
+    height: 25px;
+    text-align: center;
+    /*padding: 15px;
+    border-bottom: 1px solid #000;*/
+}
+
+    .sx-menu a {
+        color: #fff;
+    }
+
+.table .custom-quantity-input {
+    width: 45%;
+}
+
+.cart-table .product-name-col {
+    width: inherit;
+}
+.btn-cart
+{
+    width:156px;
+    margin-bottom:5px;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    font-family: BRoya !important;
+}
+.bordered-box {
+    border: 1px solid #e7e2d1;
+    padding:20px;
+}
+.float-right{
+    float:right !important;
+}
+
+@media (max-width: 768px)
+{
+    .banner-top{
+        height:100%;
+    }
+    .menu-collapse {
+        padding-top: 50px;
+    }
+}

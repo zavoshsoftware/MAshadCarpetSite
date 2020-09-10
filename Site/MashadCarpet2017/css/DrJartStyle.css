@@ -1,0 +1,333 @@
+﻿@font-face {
+    font-family: 'BYekan';
+    src: url('../fonts/Yekan.eot?#') format('eot'), /* IE6?8 */
+    url('../fonts/Yekan.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/Yekan.ttf') format('truetype'); /* Saf3?5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+@font-face {
+    font-family: 'BRoya';
+    src: url('../fonts/BRoya.eot?#') format('eot'), /* IE6?8 */
+    url('../fonts/BRoya.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/BRoya.ttf') format('truetype'); /* Saf3?5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+    font-family: 'BHamid';
+    src: url('../fonts/BHamid.eot?#') format('eot'), /* IE6?8 */
+    url('../fonts/BHamid.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/BHamid.ttf') format('truetype'); /* Saf3?5, Chrome4+, FF3.5, Opera 10+ */
+}
+body {
+    font-family: BYekan !important;
+}
+
+a {
+    font-family: BYekan !important;
+}
+.fontRoya {
+    font-family: BRoya !important;
+}
+.fontYekan {
+    font-family: BYekan !important;
+    direction:rtl;
+}
+#footer
+{
+     font-family: BYekan !important;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+{
+     font-family: BYekan !important;
+}
+.oldroseColor
+{
+    color:#be394a !important;
+}
+.floatright
+{
+    float:right !important;
+}
+.description
+{
+     font-family: BYekan !important;
+     direction:rtl !important;
+}
+.nav1 > li
+{
+    direction :rtl 
+}
+.info
+{
+    direction:rtl !important;
+    font-family: BRoya !important;
+}
+.address div
+{
+      direction:rtl !important;
+    font-family: BRoya !important;
+}
+.directionrtl
+{
+    direction:rtl !important;
+}
+.input-group
+{
+    
+    direction:rtl !important;
+}
+.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .btn, .input-group-btn:first-child > .btn-group > .btn, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .input-group-btn:last-child > .btn-group:not(:last-child) > .btn
+
+{
+    border-radius:0 4px 4px 0 !important;
+}
+.borderleft
+{
+    border-radius:4px 0 0 4px !important;
+    border-right:none !important;
+}
+.font42{
+    font-size:42px !important;
+}
+.font19{
+    font-size:19px !important;
+}
+.fontEnglish
+{
+    font-family: "Raleway",sans-serif !important;
+}
+     
+.logininput { 
+  width: 100%;
+  height: 39px;
+  line-height: 41px;
+  text-indent: 10px;
+  background-color: #f7f7f7;
+  border: solid 1px #e4e4e4;
+  margin-bottom: 20px;
+  font-family: 'BRoya';
+  font-size: 13px;
+  text-align:right;
+  padding-right:5px;
+}
+
+ 
+.signed {
+  color: #6b6b6b !important;
+  font-size: 13px !important;
+  font-family: 'Merriweather' !important;
+  display: inline !important;
+  margin-left: 7px;
+  margin-right: 50%;
+
+}
+
+form.signin input:-moz-placeholder {   color: #424242; }
+form.signin input::-webkit-input-placeholder {   color: #424242;  }
+ 
+.buttonLogin { 
+    width: 100%;
+    height: 39px;
+    line-height: 29px !important;
+    background-color: #ea5748;
+    border: 0;
+    font-family: 'Merriweather';
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    border: 0;
+}
+
+
+.login-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.forgot2 {
+  float: right!important;
+  font-family: BHamid !important;
+  font-size: 13px!important;
+  font-style: italic!important;
+  color: #6b6b6b!important;
+}
+
+.recover {
+ font-family: BHamid !important;
+  font-size: 13px!important;
+  font-style: italic!important;
+  color: #ea5748!important;
+  float: left!important;
+}
+
+.recover:after,.forgot2:after {
+  display: none;
+}
+
+.log-socials {
+  margin-top: 30px;
+}
+
+.log-socials h6 {
+  float: left;
+}
+
+.log-socials a:after {
+  display: none;
+}
+
+.log-socials i {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+}
+
+.log-socials ul {
+  float: right;
+}
+
+.log-socials .fa-facebook {
+  background: #3b5998;
+}
+
+.log-socials .fa-twitter {
+  background: #00b6f1;
+}
+
+.log-socials .fa-google-plus {
+  background: #dd4b39;
+}
+
+.center
+{
+    text-align:center !important;
+}
+.error
+{
+    color:#EA5748;
+    direction:rtl;
+}
+.lbl-gray
+{
+    color:#636363;
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.div-req
+{
+    padding:15px;
+}
+.top-bottom-cut-brown {
+	padding-bottom: 80px;
+	padding-top: 80px;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid #C7B093;
+	border-top: 20px solid #C7B093;
+}
+
+.bottom-cut-brown {
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid #C7B093;
+	padding-bottom: 80px;
+}
+.top-cut-brown {
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #C7B093;
+	padding-top: 80px;
+}
+.txtForm {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border: 1px solid #e4e4e4;
+    color: #424242;
+    cursor: pointer;
+    font-family: "Merriweather";
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    width: 100%;
+}
+
+.check-body a
+{
+    text-align:right;
+}
+.limenuToggle
+{
+    background-color:#C7B093;border-radius:50%;margin:5px;width:60px;height:60px;
+}
+.limenuToggle a:hover
+{
+    background-color:none;border-radius:50%;
+}
+
+.rbtl
+{
+    width: 100%;font-size:16px;
+}
+.rbtl label
+{
+    margin-right:10px;  font-family: BYekan !important;
+}
+.rbtl td
+{
+    direction:rtl;
+}
+#blog .contents .box h2 {
+	
+    height:55px;
+    overflow:hidden;
+}
+#blog .contents .box h2 a:hover
+{
+    text-decoration:none;
+    color:#C7B093;
+}
+.f-about2 {
+}
+.f-about2 input[type="text"]
+{
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #2a2a2a;
+    color: #fff;
+    font-family: "Merriweather";
+    font-size: 13px;
+    /*font-style: italic;*/
+    padding: 12px;
+    width: 100%;
+     font-family: BYekan !important;
+}
+.f-about2 input[type="submit"]
+{
+    border: 0 none;
+    font-family: "Merriweather";
+    font-size: 13px;
+    margin: 0;
+    cursor: pointer;
+    background-color: #ea5748;
+    color: #fff;
+    display: block;
+    font-family: BYekan;
+    font-size: 13px;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    height:50px;
+}

@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>О нас</value>
+  </data>
+  <data name="AddToBasket" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Adminlogin" xml:space="preserve">
+    <value>Вход в админ панель</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>все</value>
+  </data>
+  <data name="amount" xml:space="preserve">
+    <value>миссионер</value>
+  </data>
+  <data name="Answers" xml:space="preserve">
+    <value>Ответов</value>
+  </data>
+  <data name="AvailableColors" xml:space="preserve">
+    <value>Доступные цвета</value>
+  </data>
+  <data name="AvailableSize" xml:space="preserve">
+    <value>Доступные размеры</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Блог</value>
+  </data>
+  <data name="BlogGroup" xml:space="preserve">
+    <value>Группа Блог</value>
+  </data>
+  <data name="CertificationStandard" xml:space="preserve">
+    <value>Стандарт сертификации</value>
+  </data>
+  <data name="ClickForRegister" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="Collection" xml:space="preserve">
+    <value>Коллекция</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>цвет</value>
+  </data>
+  <data name="Colorfilter" xml:space="preserve">
+    <value>цветной фильтр</value>
+  </data>
+  <data name="ContactForm" xml:space="preserve">
+    <value>Контактный формуляр</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>контакты</value>
+  </data>
+  <data name="ContactTitle" xml:space="preserve">
+    <value>контакт</value>
+  </data>
+  <data name="Continuation" xml:space="preserve">
+    <value>продолжение</value>
+  </data>
+  <data name="CustomerClub" xml:space="preserve">
+    <value>Клуб клиентов</value>
+  </data>
+  <data name="CustomerServicesTitle" xml:space="preserve">
+    <value>Обслуживание клиентов</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>история</value>
+  </data>
+  <data name="Dearuser" xml:space="preserve">
+    <value>Уважаемый пользователь</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>описание</value>
+  </data>
+  <data name="DesignNo" xml:space="preserve">
+    <value>Количество Карта</value>
+  </data>
+  <data name="Do" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EmptyBasket" xml:space="preserve">
+    <value>Ваша корзина пуста</value>
+  </data>
+  <data name="EnterCity" xml:space="preserve">
+    <value>Введите город</value>
+  </data>
+  <data name="EnterCorrectEmail" xml:space="preserve">
+    <value>Введите правильный электронную почту</value>
+  </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>Введите адрес электронной почты</value>
+  </data>
+  <data name="EnterFamily" xml:space="preserve">
+    <value>Введите Фамилия</value>
+  </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>Введите свое имя</value>
+  </data>
+  <data name="EnterText" xml:space="preserve">
+    <value>Введите текст</value>
+  </data>
+  <data name="EnterTicketText" xml:space="preserve">
+    <value>Введите текст куски</value>
+  </data>
+  <data name="EnterYourPassword" xml:space="preserve">
+    <value>Введите пароль.</value>
+  </data>
+  <data name="FactorDownload" xml:space="preserve">
+    <value>Скачать Factor</value>
+  </data>
+  <data name="Factorfinal" xml:space="preserve">
+    <value>фактор финале</value>
+  </data>
+  <data name="Factory" xml:space="preserve">
+    <value>завод</value>
+  </data>
+  <data name="FinalizedFactor" xml:space="preserve">
+    <value>Ваш счет был завершен.</value>
+  </data>
+  <data name="For" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ForgetPassword" xml:space="preserve">
+    <value>Забыли пароль?</value>
+  </data>
+  <data name="Here" xml:space="preserve">
+    <value>здесь</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>образ</value>
+  </data>
+  <data name="IncorrectUsernameOrPass" xml:space="preserve">
+    <value>Имя пользователя или пароль неверны.</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>E-mail не является действительным</value>
+  </data>
+  <data name="InvoicesList" xml:space="preserve">
+    <value>Список счетов-фактур</value>
+  </data>
+  <data name="IsPaid" xml:space="preserve">
+    <value>Платная?</value>
+  </data>
+  <data name="labeltext" xml:space="preserve">
+    <value>русский</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>язык</value>
+  </data>
+  <data name="LatestNews" xml:space="preserve">
+    <value>Последние новости</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Полезные ссылки</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>запись</value>
+  </data>
+  <data name="LoginForAccess" xml:space="preserve">
+    <value>Для доступа к этому разделу, вы должны войти в систему.</value>
+  </data>
+  <data name="LoginToSite" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="logoimg" xml:space="preserve">
+    <value>Logo-eng.png</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>выход</value>
+  </data>
+  <data name="machinecarpetmodel" xml:space="preserve">
+    <value>Категории продуктов</value>
+  </data>
+  <data name="MainPageTitle" xml:space="preserve">
+    <value>домой</value>
+  </data>
+  <data name="Markets" xml:space="preserve">
+    <value>Магазины</value>
+  </data>
+  <data name="MashadCarpet" xml:space="preserve">
+    <value>Мешхед ковре</value>
+  </data>
+  <data name="MashadCarpetDevice" xml:space="preserve">
+    <value>Похожие блоги...</value>
+  </data>
+  <data name="Mashhadcarpetheadquarters" xml:space="preserve">
+    <value>Штаб Мешхед ковровые</value>
+  </data>
+  <data name="MashhadIndustrialGroupFactories" xml:space="preserve">
+    <value>Мешхед промышленная группа Фабрики</value>
+  </data>
+  <data name="MenuTitle" xml:space="preserve">
+    <value>меню</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>мобильный</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>Мой аккаунт</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>имя</value>
+  </data>
+  <data name="NewestProductTitle" xml:space="preserve">
+    <value>Последние поступления</value>
+  </data>
+  <data name="NewsTitle" xml:space="preserve">
+    <value>Новости</value>
+  </data>
+  <data name="NotAvailableProduct" xml:space="preserve">
+    <value>Продукт не доступен для просмотра</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>подсчет</value>
+  </data>
+  <data name="OnlibePayment" xml:space="preserve">
+    <value>Онлайн платежи</value>
+  </data>
+  <data name="onlineshopping" xml:space="preserve">
+    <value>Купить онлайн</value>
+  </data>
+  <data name="OnlineStore" xml:space="preserve">
+    <value>магазин</value>
+  </data>
+  <data name="orderdate" xml:space="preserve">
+    <value>Дата заказа</value>
+  </data>
+  <data name="OrderHistory" xml:space="preserve">
+    <value>история</value>
+  </data>
+  <data name="OurAwards" xml:space="preserve">
+    <value>Наши награды</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>пароль</value>
+  </data>
+  <data name="PayMent" xml:space="preserve">
+    <value>платить</value>
+  </data>
+  <data name="Paymentsreport" xml:space="preserve">
+    <value>отчет платежи</value>
+  </data>
+  <data name="PersonalInformation" xml:space="preserve">
+    <value>Персональная информация</value>
+  </data>
+  <data name="plannumber" xml:space="preserve">
+    <value>Количество Карта</value>
+  </data>
+  <data name="PopularNews" xml:space="preserve">
+    <value>Самые популярные новости</value>
+  </data>
+  <data name="Postalcode" xml:space="preserve">
+    <value>почтовый индекс</value>
+  </data>
+  <data name="PriceAfterDiscount" xml:space="preserve">
+    <value>цена со скидкой</value>
+  </data>
+  <data name="Priceper" xml:space="preserve">
+    <value>Цена за</value>
+  </data>
+  <data name="ProductCategories" xml:space="preserve">
+    <value>Категории продуктов</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="ProductsGroup" xml:space="preserve">
+    <value>Группы товаров</value>
+  </data>
+  <data name="ProductSpecifications" xml:space="preserve">
+    <value>Билет Посмотреть продукт</value>
+  </data>
+  <data name="ProductsTitle" xml:space="preserve">
+    <value>продукты</value>
+  </data>
+  <data name="Province" xml:space="preserve">
+    <value>провинция</value>
+  </data>
+  <data name="Purchaseguide" xml:space="preserve">
+    <value>Как купить</value>
+  </data>
+  <data name="Reeds" xml:space="preserve">
+    <value>Тростников</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>зачисление</value>
+  </data>
+  <data name="RelatedBlogs" xml:space="preserve">
+    <value>Похожие блоги</value>
+  </data>
+  <data name="RelatedProducts" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>возвращение</value>
+  </data>
+  <data name="SaveButton" xml:space="preserve">
+    <value>регистрация</value>
+  </data>
+  <data name="SearchBtn" xml:space="preserve">
+    <value>поиск</value>
+  </data>
+  <data name="SearchText" xml:space="preserve">
+    <value>Поиск ..</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>записывать</value>
+  </data>
+  <data name="shoppingbag" xml:space="preserve">
+    <value>Корзина</value>
+  </data>
+  <data name="shots" xml:space="preserve">
+    <value>выстрелов</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>наблюдение</value>
+  </data>
+  <data name="ShowDetails" xml:space="preserve">
+    <value>Показать сведения о продукте</value>
+  </data>
+  <data name="ShowOrderList" xml:space="preserve">
+    <value>Для получения списка заказов</value>
+  </data>
+  <data name="ShowProductDetail" xml:space="preserve">
+    <value>Показать сведения о продукте</value>
+  </data>
+  <data name="ShowProducts" xml:space="preserve">
+    <value>Найти продукты</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>размер</value>
+  </data>
+  <data name="SizeFilter" xml:space="preserve">
+    <value>Размер фильтра</value>
+  </data>
+  <data name="SocialResponsibility" xml:space="preserve">
+    <value>Социальная ответственность</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>статус</value>
+  </data>
+  <data name="StoreAddress" xml:space="preserve">
+    <value>адрес</value>
+  </data>
+  <data name="StoreCity" xml:space="preserve">
+    <value>город</value>
+  </data>
+  <data name="StoreName" xml:space="preserve">
+    <value>Интернет-магазин</value>
+  </data>
+  <data name="StorePhone" xml:space="preserve">
+    <value>телефон</value>
+  </data>
+  <data name="SubmitTicket" xml:space="preserve">
+    <value>тикет</value>
+  </data>
+  <data name="SuccessfulMessage" xml:space="preserve">
+    <value>Ваше сообщение было успешно отправлено.</value>
+  </data>
+  <data name="SuccessfulRegister" xml:space="preserve">
+    <value>Ваша регистрация была успешно</value>
+  </data>
+  <data name="SupportKnowledgebase" xml:space="preserve">
+    <value>Поддержка База знаний</value>
+  </data>
+  <data name="TaxTitle" xml:space="preserve">
+    <value>налог</value>
+  </data>
+  <data name="TermsAndConditions" xml:space="preserve">
+    <value>Условия и условия</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>текст</value>
+  </data>
+  <data name="Thanks" xml:space="preserve">
+    <value>благодаря</value>
+  </data>
+  <data name="Ticket" xml:space="preserve">
+    <value>билеты</value>
+  </data>
+  <data name="TicketDate" xml:space="preserve">
+    <value>История билетов</value>
+  </data>
+  <data name="TicketsList" xml:space="preserve">
+    <value>Список Билеты</value>
+  </data>
+  <data name="TicketSubject" xml:space="preserve">
+    <value>вопрос по продаже билетов</value>
+  </data>
+  <data name="TicketText" xml:space="preserve">
+    <value>Текст билетов</value>
+  </data>
+  <data name="Totalfactor" xml:space="preserve">
+    <value>Суммарный коэффициент</value>
+  </data>
+  <data name="TotalPrice" xml:space="preserve">
+    <value>общая цена</value>
+  </data>
+  <data name="TrackingNumber" xml:space="preserve">
+    <value>Отслеживая номер</value>
+  </data>
+  <data name="TrackOrder" xml:space="preserve">
+    <value>порядок Track</value>
+  </data>
+  <data name="UpdateBasket" xml:space="preserve">
+    <value>обновление</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>имя пользователя</value>
+  </data>
+  <data name="UserTitle" xml:space="preserve">
+    <value>пользователь</value>
+  </data>
+  <data name="ViewCart" xml:space="preserve">
+    <value>карта</value>
+  </data>
+  <data name="Visit" xml:space="preserve">
+    <value>визит</value>
+  </data>
+  <data name="VisitTitle" xml:space="preserve">
+    <value>визит</value>
+  </data>
+  <data name="WelcomeTitle" xml:space="preserve">
+    <value>Добро пожаловать на сайт Мешхед ковров</value>
+  </data>
+  <data name="WrittenBy" xml:space="preserve">
+    <value>Автор</value>
+  </data>
+  <data name="YourOrder" xml:space="preserve">
+    <value>Для того, чтобы быть зарегистрирован</value>
+  </data>
+  <data name="YourShoppingCart" xml:space="preserve">
+    <value>Ваша корзина</value>
+  </data>
+</root>
